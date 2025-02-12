@@ -209,7 +209,7 @@ a {
   color: #99a9bb;
 
   font-weight: 550;
-  text-transform: capitalize;
+  text-transform: none;
 }
 
 .pt_banner_30 {
@@ -223,7 +223,7 @@ a {
   font-weight: 700;
   color: #364167;
   line-height: 50px;
-  text-transform: capitalize;
+  text-transform: none;
 }
 
 
@@ -248,7 +248,7 @@ a {
   font-weight: 700;
   color: #364167;
   line-height: 50px;
-  text-transform: capitalize;
+  text-transform: none;
 }
 
 .title h2 {
@@ -1024,7 +1024,7 @@ img {
   line-height: 30px;
   color: #868e92;
   font-weight: 500;
-  text-transform: capitalize;
+  text-transform: none;
   margin-top: 25px;
 }
 
@@ -1121,7 +1121,7 @@ ul li {
     35px;
   color: #595959;
   padding-right: 15px;
-  text-transform: capitalize;
+  text-transform: none;
   margin-top: 15px;
 }
 
@@ -1354,7 +1354,7 @@ div.bhoechie-tab div.bhoechie-tab-content:not(.active) {
 .pricingTable .heading {
   font-size: 15px;
   color: #fff;
-  text-transform: capitalize;
+  text-transform: none;
   letter-spacing: 2px;
 }
 
@@ -1362,7 +1362,7 @@ div.bhoechie-tab div.bhoechie-tab-content:not(.active) {
   font-size: 18px;
   color: #fff;
   margin-bottom: 20px;
-  text-transform: capitalize;
+  text-transform: none;
   letter-spacing: 2px;
 }
 
@@ -1663,7 +1663,7 @@ a {
   font-size: 18px;
   color: #364167;
   font-weight: 600;
-  text-transform: capitalize;
+  text-transform: none;
 
 }
 
@@ -3024,7 +3024,7 @@ iframe {
 
 .blog-content h3 a {
   font-size: 20px;
-  text-transform: capitalize;
+  text-transform: none;
   color: #555 !important;
 }
 
@@ -3089,7 +3089,7 @@ ul {
 
 .btn_font_16 {
   font-size: 16px;
-  text-transform: capitalize;
+  text-transform: none;
   padding: 12px 25px;
 }
 
@@ -3190,7 +3190,7 @@ ol {
 }
 
 .sewl-comments-meta h4 {
-  text-transform: capitalize;
+  text-transform: none;
   font-weight: 500;
   margin-top: 0px;
   margin-bottom: 20px;
@@ -3441,7 +3441,7 @@ h3.blog-title {
 .sidebar-title {
   position: relative;
   font-size: 22px;
-  text-transform: capitalize;
+  text-transform: none;
   padding-bottom: 5px;
   margin-bottom: 20px;
 }

@@ -215,7 +215,6 @@ a {
 .pt_banner_30 {
   padding-top: 35px !important
 }
-}
 
 .title-left h1 {
   font-size: 35px;
@@ -1434,13 +1433,11 @@ div.bhoechie-tab div.bhoechie-tab-content:not(.active) {
 
 .pricingTable .btn-default {
   display: inline-block;
-  font-size: 18px;
   color: #fff;
   text-transform: uppercase;
   background: #7a90ff;
   padding: 12px 25px;
-  margin: 30px 0;
-  margin-top: 60px;
+  margin: 20px 0;
   border-radius: 5px;
   transition: all 0.3s ease 0s;
   -webkit-transform: skew(-14deg);
@@ -1790,8 +1787,8 @@ a {
 }
 
 .our_partners_area .partners {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   text-align: center;
 }
 
@@ -2000,7 +1997,8 @@ a {
 
 .button-n,
 a {
-  text-decoration: none !important color:#fff !important;
+  text-decoration: none !important;
+  color: #fff !important;
 }
 
 
@@ -2114,10 +2112,7 @@ a {
 }
 
 .footer-top {
-  font-size: 25px;
   color: #fff;
-  font-weight: 600;
-
   margin-bottom: 20px;
 }
 
@@ -2131,21 +2126,15 @@ a {
 }
 
 .footer-left-h {
-  font-size: 20px;
   color: #fff;
-  line-height: 30px;
-
 }
 
 .footer-menu li {
-  font-size: 20px;
   list-style-type: none;
-  line-height: 40px;
   color: #fff;
 }
 
 .location li {
-  font-size: 20px;
   list-style-type: none;
   line-height: 30px;
   color: #fff;
@@ -3066,7 +3055,6 @@ ul {
 .pagination-wrap ul li a {
   height: 45px;
   width: 45px;
-  background: #;
   line-height: 45px;
   display: block;
   border: 1px solid #296dc1;
@@ -3585,7 +3573,7 @@ h3.blog-title {
   }
 
   .service-about-services.text-left.tabs_box_s {
-    ] margin-bottom: 15px;
+    margin-bottom: 15px;
   }
 
   .col-md-3 {

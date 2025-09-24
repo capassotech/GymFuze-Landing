@@ -1,450 +1,583 @@
-<!-- <!DOCTYPE html> -->
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 
 <head>
-   <meta charset="utf-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-   <meta name="title" content="GymFuze | Gestión Eficiente para Gimnasios y Personal Trainers">
-   <meta name="description"
-      content="Olvídate de planillas y recordatorios manuales. Con GymFuze, administra alumnos, rutinas y pagos desde una sola plataforma. Personaliza tu app con tu logo y nombre. ¡Empieza hoy!">
-   <meta name="keywords"
-      content="gestión de gimnasios, aplicación para entrenadores personales, Aplicación para personal trainers, administración de pagos, Gestión de alumnos y pagos, automatización de tareas, app personalizada">
-   <meta name="robots" content="index, follow">
+  <title>GymFuze | App para gimnasios y entrenadores con gestión integral</title>
+  <meta name="description" content="GymFuze es la app para gimnasios, entrenadores y alumnos que simplifica reservas, rutinas, pagos y comunicación. Descubrí la plataforma con prueba gratuita." />
+  <meta name="keywords" content="app para gimnasios, app para entrenadores, app para alumnos de gimnasio, gestión de gimnasios, software para gimnasios, plataforma fitness" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://linktr.ee/gymfuze" />
 
-   <meta property="og:title" content="GymFuze | Gestión Eficiente para Gimnasios y Personal Trainers">
-   <meta property="og:description"
-      content="Olvídate de planillas y recordatorios manuales. Con GymFuze, administra alumnos, rutinas y pagos desde una sola plataforma. Personaliza tu app con tu logo y nombre. ¡Empieza hoy!">
-   <meta property="og:image" content="https://https://gymfuzeapp.web.app/logo.jpg">
-   <meta property="og:url" content="https://https://gymfuzeapp.web.app">
-   <meta property="og:type" content="website">
+  <meta property="og:title" content="GymFuze | Plataforma digital para gimnasios y entrenadores" />
+  <meta property="og:description" content="Gestioná alumnos, turnos, rutinas y pagos desde una sola app. Conectá entrenadores y alumnos con GymFuze." />
+  <meta property="og:image" content="https://linktr.ee/og-image.jpg" />
+  <meta property="og:url" content="https://linktr.ee/gymfuze" />
+  <meta property="og:type" content="website" />
 
-   <meta name="twitter:card" content="summary_large_image" />
-   <meta name="twitter:title" content="GymFuze | Gestión Eficiente para Gimnasios y Personal Trainers" />
-   <meta name="twitter:description"
-      content="Olvídate de planillas y recordatorios manuales. Con GymFuze, administra alumnos, rutinas y pagos desde una sola plataforma. Personaliza tu app con tu logo y nombre. ¡Empieza hoy!">
-   <meta name="twitter:image" content="https://https://gymfuzeapp.web.app/logo.jpg" />
-   <meta name="twitter:site" content="@GymFuze" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="GymFuze | Plataforma digital para gimnasios y entrenadores" />
+  <meta name="twitter:description" content="Una app para alumnos y otra para entrenadores. Reservas, pagos y rutinas en un solo lugar." />
+  <meta name="twitter:url" content="https://linktr.ee/gymfuze" />
 
-   <title>GymFuze | Aplicación de gestión para gimnasios o personal trainers</title>
-   <!-- Favicon -->
-   <link rel="icon" href="assets/images/1.png" type="image/x-icon" />
-   <!-- Bootstrap CSS -->
-   <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-   <!-- Animate CSS -->
-   <link href="assets/vendors/animate/animate.css" rel="stylesheet">
-   <!-- Icon CSS-->
-   <link rel="stylesheet" href="assets/vendors/font-awesome/css/font-awesome.min.css">
-   <!-- Camera Slider -->
-   <link rel="stylesheet" href="assets/vendors/camera-slider/camera.css">
-   <!-- Owlcarousel CSS-->
-   <link rel="stylesheet" type="text/css" href="assets/vendors/owl_carousel/owl.carousel.css" media="all">
-   <!--Template Styles CSS-->
-   <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="all" />
-   <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
-      rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --primary: #4b7bec;
+      --secondary: #1e272e;
+      --accent: #32b486;
+      --light: #f5f7fb;
+      --dark: #0b1320;
+      --text: #283144;
+      scroll-behavior: smooth;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text);
+      background-color: #fff;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    header {
+      background: linear-gradient(135deg, rgba(11, 19, 32, 0.9), rgba(75, 123, 236, 0.9)), url('assets/images/img-g.png') center/cover no-repeat;
+      color: #fff;
+      padding: 4rem 1.5rem 5rem;
+    }
+
+    .container {
+      width: min(1100px, 92vw);
+      margin: 0 auto;
+    }
+
+    .hero {
+      display: grid;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .hero__content h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      margin: 0 0 1rem;
+      line-height: 1.2;
+    }
+
+    .hero__content p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      max-width: 650px;
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .badge {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 999px;
+      padding: 0.4rem 1rem;
+      font-size: 0.9rem;
+    }
+
+    .hero__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .btn {
+      padding: 0.9rem 1.8rem;
+      border-radius: 999px;
+      font-weight: 600;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 12px 30px rgba(50, 180, 134, 0.4);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 36px rgba(11, 19, 32, 0.25);
+    }
+
+    section {
+      padding: 4.5rem 0;
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      margin-bottom: 1rem;
+      color: var(--secondary);
+    }
+
+    h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+      color: var(--secondary);
+    }
+
+    .grid {
+      display: grid;
+      gap: 1.8rem;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 1.8rem;
+      box-shadow: 0 18px 40px rgba(11, 19, 32, 0.08);
+    }
+
+    .card h3 {
+      margin-top: 0;
+    }
+
+    .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+      color: #fff;
+      background: var(--primary);
+    }
+
+    .section-intro {
+      max-width: 730px;
+      margin-bottom: 2.5rem;
+    }
+
+    .split {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      align-items: center;
+    }
+
+    .list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .list li {
+      margin-bottom: 0.75rem;
+      padding-left: 1.8rem;
+      position: relative;
+    }
+
+    .list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .dark-section {
+      background: var(--light);
+    }
+
+    .pricing {
+      text-align: center;
+      background: linear-gradient(135deg, #4b7bec, #32b486);
+      color: #fff;
+      border-radius: 24px;
+      padding: 3rem 2rem;
+      box-shadow: 0 25px 45px rgba(0, 0, 0, 0.15);
+    }
+
+    .pricing ul {
+      list-style: none;
+      padding: 0;
+      margin: 2rem 0;
+      text-align: left;
+    }
+
+    .pricing ul li {
+      margin-bottom: 0.8rem;
+      padding-left: 1.6rem;
+      position: relative;
+    }
+
+    .pricing ul li::before {
+      content: '✔';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #d9deeb;
+      padding: 1.5rem 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-item h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    .testimonials {
+      background: linear-gradient(120deg, rgba(75, 123, 236, 0.1), rgba(50, 180, 134, 0.1));
+      border-radius: 20px;
+      padding: 2rem;
+    }
+
+    .testimonial {
+      background: #fff;
+      border-radius: 18px;
+      padding: 1.5rem;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+      position: relative;
+    }
+
+    .testimonial::before {
+      content: '“';
+      font-size: 3rem;
+      color: var(--primary);
+      position: absolute;
+      top: -20px;
+      left: 20px;
+    }
+
+    footer {
+      background: var(--dark);
+      color: #d0d7e8;
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+
+    footer h2 {
+      color: #fff;
+    }
+
+    footer p {
+      margin: 0.5rem 0 2rem;
+    }
+
+    .footer-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    @media (min-width: 900px) {
+      .hero {
+        grid-template-columns: 1.1fr 0.9fr;
+      }
+
+      .hero__media {
+        justify-self: end;
+      }
+
+      .hero__media img {
+        border-radius: 28px;
+        box-shadow: 0 30px 50px rgba(0, 0, 0, 0.35);
+      }
+    }
+  </style>
 </head>
 
-<body id="top">
-   <a href="https://api.whatsapp.com/send?phone=543435332132" target="_blank" class="float">
-      <img src="assets/images/whatsapp.png" class="float" alt="Contactar vía WhatsApp" />
-   </a>
-
-   <div class="bg-grediunt">
-      <div class="bg-banner-img ">
-         <div class="overlay-all ">
-            <header class="s-header">
-               <div class="header-logo">
-                  <a class="navbar-brand logo-biss" href="index.html"> <img src="assets/images/logo.png"> </a>
-               </div>
-               <nav class="header-nav">
-                  <a href="#0" class="header-nav__close" title="close"><span>Close</span></a>
-                  <div class="header-nav__content">
-                     <img src="assets/images/logo.png" width="50%" alt="GymFuze"></a>
-                     <ul class="header-nav__list">
-                        <li><a class="" href="#que-es-gymfuzeapp">¿Que es?</a></li>
-                        <li><a class="" href="#funcionalidades">¿Que te permite hacer?</a></li>
-                        <li><a class="" href="#elegirnos">¿Por qué elegirnos?</a></li>
-                        <li><a class="" href="#precios">Precios</a></li>
-                        <li><a class="" href="#contacto">Contacto</a></li>
-                     </ul>
-                     <h3>Este es un desarrollo de <a href="https://capassotech.com/" target="_blank">Capasso Tech</a>
-                     </h3>
-                     <ul class="header-nav__social">
-                        <li>
-                           <a href="https://www.facebook.com/capasso.tech" target="_blank"><i
-                                 class="fa fa-facebook-square fa-3x social"></i></a>
-                        </li>
-                        <li>
-                           <a href="https://www.instagram.com/gymfuze" target="_blank"><i
-                                 class="fa fa-instagram fa-3x social"></i></a>
-                        </li>
-                        <li>
-                           <a href="https://www.linkedin.com/company/capassotech"><i
-                                 class="fa fa-linkedin-square fa-3x social"></i></a>
-                        </li>
-                        <li>
-                           <a href="https://wa.link/cw09sb" target="_blank"><i
-                                 class="fa fa-whatsapp fa-3x social"></i></a>
-                        </li>
-                     </ul>
-                     <a href="https://capassotech.com/" target="_blank">
-                        <img src="assets/images/capassotech_logo.png" width="50%" alt="Capasso Tech">
-                     </a>
-                  </div>
-               </nav>
-               <a class="header-menu-toggle" href="#0">
-                  <span class="header-menu-icon"></span>
-               </a>
-            </header>
-
-            <section id="banner" class="mb-90">
-               <div class="container ">
-                  <div class="row">
-                     <div id="banner-text" class="col-md-7 text-c text-left ">
-                        <h5 class="wow fadeInUp main-h" data-wow-delay="0.2s">La mejor APP para<br> gimnasios o personal
-                           trainers</h5>
-                        <p class="banner-text wow fadeInUp main-h3" data-wow-delay="0.8s">Administrá alumnos, rutinas y
-                           vencimientos de pagos de forma simple</p>
-                        <div class="top-banner wow fadeInRight">
-                           <a href="https://linktr.ee/gymfuze" target="_blank"
-                              class="btn btn-default wow fadeInUp js-scroll-trigger" data-wow-delay=" 0.5s">
-                              <span class="skew_14">Registrate gratis</span>
-                           </a>
-                        </div>
-                     </div>
-                     <div class="col-md-5">
-                        <div class="video-imgs text-center">
-                           <a href="https://www.youtube.com/shorts/y2sT4WyWoFI" target="_blank" class="hero__play">
-                              <img src="assets/images/img-g.png" alt="Video">
-                           </a>
-                           <p style="color: white; margin-top: 10px;">Ver video</p>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </section>
-            <div class="container-fluid p0 banner-shap-img">
-            </div>
-         </div>
+<body>
+  <header>
+    <div class="container hero">
+      <div class="hero__content">
+        <div class="badges" aria-label="Palabras clave destacadas">
+          <span class="badge">App para gimnasios</span>
+          <span class="badge">App para entrenadores</span>
+          <span class="badge">App para alumnos de gimnasio</span>
+        </div>
+        <h1>GymFuze: la plataforma digital que conecta y organiza tu gimnasio</h1>
+        <p>Impulsá tu negocio fitness con dos aplicaciones integradas: una app intuitiva para tus alumnos y otra para entrenadores y gimnasios. Reservas, rutinas, pagos y comunicación directa en un solo ecosistema listo para escalar.</p>
+        <div class="hero__actions">
+          <a class="btn btn-primary" href="https://linktr.ee/gymfuze" target="_blank" rel="noopener noreferrer">Registrarme como Alumno</a>
+          <a class="btn btn-outline" href="https://linktr.ee/gymfuze" target="_blank" rel="noopener noreferrer">Registrarme como Entrenador/Gimnasio</a>
+          <a class="btn btn-primary" style="background: var(--primary);" href="https://linktr.ee/gymfuze" target="_blank" rel="noopener noreferrer">Probar gratis</a>
+        </div>
       </div>
-
-      <div id="contacto" class="our_partners_area ">
-         <div class="book_now_aera ">
-            <div class="container">
-               <div class="row book_now bg-new">
-                  <form action="https://formspree.io/f/xqaedzvb" method="post" class="php-email-form">
-                     <div class="row">
-                        <div class="top-banner col-md-8 form-group mt-3 mt-md-0">
-                           <input type="email" class="form-control" name="email" id="email"
-                              placeholder="Correo Electrónico" required>
-                        </div>
-                        <div class="col-md-4 form-group mt-3 mt-md-0">
-                           <div class="top-banner wow fadeInRight text-left"
-                              style="visibility: visible; animation-name: fadeInRight;">
-                              <button id="https://wa.link/pccey6" type="submit"
-                                 class="btn btn-primary button_12  wow fadeInUp  js-scroll-trigger"
-                                 data-wow-delay=" 0.5s"
-                                 style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;"><span
-                                    class="skew_14">Quiero información</span></button>
-                           </div>
-                        </div>
-                     </div>
-                  </form>
-               </div>
-            </div>
-         </div>
+      <div class="hero__media" aria-hidden="true">
+        <img src="assets/images/img-g.png" alt="Interfaz de la app GymFuze para alumnos y entrenadores" />
       </div>
+    </div>
+  </header>
 
-      <div id="que-es-gymfuzeapp" class="py-70">
-         <div class="container About-right-bg-img ">
-            <div class="about text-left  ">
-               <div class="col-md-7">
-                  <div class="about_left_text wow fadeInUp">
-                     <h2 style="color: white;">¿Qué es GymFuze?</h2>
-                     <p>Olvidate de las planillas y los recordatorios manuales. Con GymFuze, vas a poder gestionar
-                        tus alumnos, rutinas y vencimientos de pagos de forma simple y eficiente, todo desde una sola
-                        aplicación.</p>
-                     <p>📲 Tu marca, tu app: GymFuze se personaliza con el logo y nombre de tu gimnasio, para que tus
-                        clientes sientan que están usando tu propia aplicación.</p>
-                     <div class="top-about wow fadeInRight wow fadeInUp">
-                        <a id="https://wa.link/pccey6" href="https://wa.link/pccey6"
-                           class="btn btn-default btn_text_cap btn_bg_f button_py_12   wow fadeInUp  js-scroll-trigger"
-                           data-wow-delay=" 0.5s"><span class="skew_14">Contactanos</span></a>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-5">
-               </div>
-            </div>
-         </div>
+  <main>
+    <section id="que-es-gymfuze" class="dark-section">
+      <div class="container">
+        <h2>¿Qué es GymFuze?</h2>
+        <p class="section-intro">GymFuze es una plataforma de gestión de gimnasios pensada para digitalizar tu negocio y acompañar la experiencia de entrenamiento. Con dos apps complementarias —una para alumnos y otra para entrenadores o gimnasios— centralizás turnos, rutinas, pagos y comunicación mientras mantenés la identidad de tu marca.</p>
+        <div class="grid grid-3">
+          <article class="card">
+            <div class="icon">1</div>
+            <h3>App para alumnos de gimnasio</h3>
+            <p>Los alumnos reservan turnos, siguen rutinas personalizadas, registran sus avances y conversan con su entrenador desde cualquier dispositivo.</p>
+          </article>
+          <article class="card">
+            <div class="icon">2</div>
+            <h3>App para entrenadores y gimnasios</h3>
+            <p>Organizá agendas, grupos, pagos y contenidos desde una consola centralizada con métricas claras y flujos automatizados.</p>
+          </article>
+          <article class="card">
+            <div class="icon">3</div>
+            <h3>Tu marca en primer plano</h3>
+            <p>Personalizá la app con los colores, el logo y el nombre de tu gimnasio para brindar una experiencia coherente y profesional.</p>
+          </article>
+        </div>
       </div>
-   </div>
+    </section>
 
-   <section id="funcionalidades">
-      <div class="container-fluid ">
-         <div class="row text-left clip-polygon_right_2">
-            <div class="col-md-5 p-0 clip-polygon_left_2 wow fadeInUp">
-               <div class="video-img">
-               </div>
-            </div>
-            <div class="col-md-7 wow fadeInUp  pl_90 pr_90">
-               <h2 class="wow fadeInUp " data-wow-delay=" 0.5s"
-                  style="visibility: visible; animation-name: fadeInRight;">¿Qué te permite hacer?</h2>
-               <p class="about_bottom_h wow fadeInUp " data-wow-delay=" 0.5s"
-                  style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;">
-                  ✅ <b>Administrar alumnos:</b> Cargá y gestioná toda la información en un solo lugar.
-               </p>
-               <p class="about_bottom_h wow fadeInUp " data-wow-delay=" 0.5s"
-                  style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;">
-                  ✅ <b>Asignar rutinas:</b> Cada alumno accede a su plan de entrenamiento desde su celular.
-               <p class="about_bottom_h wow fadeInUp " data-wow-delay=" 0.5s"
-                  style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;">
-                  ✅ <b>Controlar pagos:</b> Registrá los pagos y la app enviará recordatorios automáticos.
-               </p>
-               <p class="about_bottom_h wow fadeInUp " data-wow-delay=" 0.5s"
-                  style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;">
-                  ✅ <b>Interfaz fácil de usar:</b> Sin complicaciones, sin curva de aprendizaje.
-               </p>
-               <div class="left-services wow fadeInRight text-right"
-                  style="visibility: visible; animation-name: fadeInRight;">
-                  <a id="#services" href="https://wa.link/pccey6" class="btn btn-default wow fadeInUp js-scroll-trigger"
-                     data-wow-delay=" 0.5s"
-                     style="width: 100%; visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;"><span
-                        class="skew_14">Contactanos</span></a>
-               </div>
-            </div>
-         </div>
+    <section id="beneficios-alumnos">
+      <div class="container">
+        <h2>Beneficios de la app para alumnos de gimnasio</h2>
+        <p class="section-intro">Motivá a tus alumnos con herramientas que simplifican su día a día y los ayudan a alcanzar resultados medibles.</p>
+        <div class="grid grid-2">
+          <article class="card">
+            <div class="icon">💪</div>
+            <h3>Rutinas siempre disponibles</h3>
+            <p>Consultá planes y ejercicios adaptados a cada objetivo, con videos, instrucciones y actualizaciones en tiempo real.</p>
+          </article>
+          <article class="card">
+            <div class="icon">📅</div>
+            <h3>Reservas y turnos en segundos</h3>
+            <p>Elegí horarios, confirmá asistencia y recibí recordatorios automáticos para no perder ninguna clase.</p>
+          </article>
+          <article class="card">
+            <div class="icon">📈</div>
+            <h3>Seguimiento de progreso</h3>
+            <p>Registrá peso, medidas y PRs para visualizar la evolución y mantener la motivación siempre alta.</p>
+          </article>
+          <article class="card">
+            <div class="icon">💬</div>
+            <h3>Comunicación directa</h3>
+            <p>Enviá mensajes al instante a tu entrenador o al gimnasio, resolvé dudas y recibí feedback personalizado.</p>
+          </article>
+        </div>
       </div>
-   </section>
+    </section>
 
-   <div id="elegirnos">
-      <section class="">
-         <div class="container-fluid ">
-            <div class="row text-left clip-polygon_right ">
-               <div class="col-md-7 wow fadeInUp pl_90 pr_90">
-                  <h2 class="wow fadeInUp " data-wow-delay=" 0.5s"
-                     style="visibility: visible; animation-name: fadeInRight;">¿Por qué elegirnos?</h2>
-                  <p class="about_bottom_h wow fadeInUp " data-wow-delay=" 0.5s"
-                     style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;">
-                     ✔ <b>Tu gimnasio, tu identidad:</b> La app llevará tu logo y nombre.
-                  </p>
-                  <p class="about_bottom_h wow fadeInUp " data-wow-delay=" 0.5s"
-                     style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;">
-                     ✔ <b>Menos tiempo en administración, más en entrenar:</b> Automatizá tareas repetitivas.
-                  <p class="about_bottom_h wow fadeInUp " data-wow-delay=" 0.5s"
-                     style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;">
-                     ✔ <b>Recordatorios automáticos:</b> No más olvidos ni demoras en los pagos de tus alumnos.
-                  </p>
-                  <p class="about_bottom_h wow fadeInUp " data-wow-delay=" 0.5s"
-                     style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;">
-                     ✔ <b>Soporte técnico continuo:</b> Siempre vas a tener ayuda cuando la necesites.
-                  </p>
-                  <p class="about_bottom_h wow fadeInUp " data-wow-delay=" 0.5s"
-                     style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;">
-                     ✔ <b>Actualizaciones y mejoras constantes:</b> La app evoluciona para brindarte más herramientas y
-                     mayor eficiencia.
-                  </p>
-                  <div class="left-services_32 wow fadeInRight text-left"
-                     style="visibility: visible; animation-name: fadeInRight;">
-                     <a href="https://wa.link/pccey6" class="btn btn-default  wow fadeInUp  js-scroll-trigger"
-                        data-wow-delay=" 0.5s"
-                        style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;"><span
-                           class="skew_14">¡Hablá con nosotros por WhatsApp!</span></a>
-                  </div>
-               </div>
-               <div class="col-md-5 p-0 clip-polygon_left wow fadeInUp">
-                  <div class="video-img">
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
-   </div>
-
-   <div id="precios">
-      <div class="container wow fadeInUp">
-         <div class="row text-center mb-60">
-            <div class="title wow fadeInUp">
-               <h2>Paga solo por lo que usas</h2>
-               <h1>Adaptamos GymFuze a tu gimnasio o servicio de entrenamiento</h1>
-               <p>Con GymFuze pagas únicamente por las funcionalidades que realmente utilizas. Sin compromisos, sin
-                  cargos ocultos.</p>
-            </div>
-         </div>
-         <div class="row text-center">
-            <div class="col-md-12">
-               <div class="pricingTable">
-                  <div class="pricingTable-header">
-                     <h3 class="heading_top">Prueba gratis durante 7 días</h3>
-                     <p style="color: #ffffff; padding: 10px;">
-                        Sin costos ocultos. Después de los 7 días, solo pagas por lo que uses.
-                     </p>
-                  </div>
-                  <div class="pricing-content">
-                     <ul>
-                        <li>✔ Gestión de alumnos ilimitada.</li>
-                        <li>✔ Administración de rutinas y pagos.</li>
-                        <li>✔ Recordatorios automáticos.</li>
-                        <li>✔ Soporte técnico continuo.</li>
-                        <li>✔ Personalización según tus necesidades.</li>
-                     </ul>
-
-                     <a target="_blank" href="https://wa.link/pccey6" class="btn-default px_70">
-                        <span class="skew_14">Consultar precio</span>
-                     </a>
-                     <a href="https://linktr.ee/gymfuze" target="_blank" class="btn-default px_70">
-                        <span class="skew_14">Registrate gratis</span>
-                     </a>
-                  </div>
-               </div>
-            </div>
-         </div>
+    <section id="beneficios-gimnasios" class="dark-section">
+      <div class="container">
+        <h2>Beneficios de la app para entrenadores y gestión de gimnasios</h2>
+        <p class="section-intro">Simplificá tus operaciones diarias y escalá tu negocio fitness con una plataforma creada para organizar y fidelizar.</p>
+        <div class="split">
+          <div>
+            <ul class="list">
+              <li>Centralizá la administración de alumnos, clases, planes y pagos desde un panel único.</li>
+              <li>Automatizá recordatorios y notificaciones para reducir tareas manuales y evitar moras.</li>
+              <li>Diseñá rutinas personalizadas con biblioteca multimedia y asignalas a cada miembro.</li>
+              <li>Mantené la comunicación fluida con chats directos, anuncios y alertas programadas.</li>
+              <li>Escalá a múltiples sucursales o franquicias con controles de acceso y reportes detallados.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Resultados que podés medir</h3>
+            <p>✔ Hasta 60% menos tiempo invertido en tareas administrativas.<br />
+              ✔ Reducción de pagos atrasados gracias a recordatorios inteligentes.<br />
+              ✔ Mayor retención de alumnos con experiencias personalizadas y seguimiento constante.</p>
+            <a class="btn btn-primary" href="https://linktr.ee/gymfuze" target="_blank" rel="noopener noreferrer">Quiero organizar mi gimnasio</a>
+          </div>
+        </div>
       </div>
-   </div>
+    </section>
 
-   <div class="our_partners_area">
-      <div class="book_now_aera">
-         <div class="container">
-            <div class="row book_now bg-new">
-               <form action="https://formspree.io/f/xqaedzvb" method="post" class="php-email-form">
-                  <div class="row">
-                     <div class="top-banner col-md-8 form-group mt-3 mt-md-0">
-                        <input type="email" class="form-control" name="email" id="email"
-                           placeholder="Correo Electrónico" required>
-                     </div>
-                     <div class="col-md-4 form-group mt-3 mt-md-0">
-                        <div class="top-banner wow fadeInRight text-left"
-                           style="visibility: visible; animation-name: fadeInRight;">
-                           <button id="https://wa.link/pccey6" type="submit"
-                              class="btn btn-primary button_12  wow fadeInUp  js-scroll-trigger" data-wow-delay=" 0.5s"
-                              style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;"><span
-                                 class="skew_14">Quiero información</span></button>
-                        </div>
-                     </div>
-                  </div>
-               </form>
-            </div>
-         </div>
+    <section id="funcionalidades">
+      <div class="container">
+        <h2>Funcionalidades principales de la plataforma GymFuze</h2>
+        <div class="grid grid-3">
+          <article class="card">
+            <h3>Gestión integral de alumnos</h3>
+            <p>Perfiles completos con historial, objetivos, asistencias y documentación en un solo lugar.</p>
+          </article>
+          <article class="card">
+            <h3>Control de pagos y facturación</h3>
+            <p>Seguimiento de cuotas, integración con múltiples métodos de cobro y reportes financieros claros.</p>
+          </article>
+          <article class="card">
+            <h3>Agenda inteligente</h3>
+            <p>Reservas online, cupos configurables y reprogramaciones fáciles para evitar clases vacías.</p>
+          </article>
+          <article class="card">
+            <h3>Rutinas y planes personalizados</h3>
+            <p>Biblioteca de ejercicios, plantillas reutilizables y asignación automatizada por objetivos.</p>
+          </article>
+          <article class="card">
+            <h3>Comunidad y comunicación</h3>
+            <p>Mensajería directa, notificaciones push y anuncios segmentados por grupo o sede.</p>
+          </article>
+          <article class="card">
+            <h3>Analítica y reportes</h3>
+            <p>Indicadores clave de asistencia, crecimiento, ingresos y engagement para decisiones estratégicas.</p>
+          </article>
+        </div>
       </div>
-   </div>
+    </section>
 
-   <!--#start Our footer Area -->
-   <div class="our_footer_area">
-      <div class="book_now_aera ">
-         <div class="container wow fadeInUp">
-            <div class="row book_now">
-               <div class="col-md-4">
-                  <div class="">
-                     <a class=" logo-biss" href="index.html"> <img src="assets/images/logo.png"></a>
-                  </div>
-                  <div class="bigpixi-footer-social">
-                     <a href="https://www.facebook.com/capasso.tech" target="_blank" class="ml-15"><i id="social-fb"
-                           class="fa fa-facebook fa-2x social"></i></a>
-                     <a href="https://www.instagram.com/gymfuze" target="_blank" class="ml-15"><i id="social-em"
-                           class="fa fa-instagram fa-2x social"></i></a>
-                     <a href="https://www.linkedin.com/company/capassotech" target="_blank" class="ml-15"><i
-                           id="social-em" class="fa fa-linkedin fa-2x social"></i></a>
-                     <a href="https://wa.link/cw09sb" target="_blank" class="ml-15"><i id="social-em"
-                           class="fa fa-whatsapp fa-2x social"></i></a>
-                  </div>
-                  <p class="footer-h"><a href=""> contacto@capasso.tech </a></p>
-                  <p class="footer-h">+54 9 3435 332132 </p>
-               </div>
-               <div class="col-md-1 ">
-               </div>
-               <div class="col-md-3">
-                  <h3 class="footer-top">Enlaces útiles </h3>
-                  <ul class="footer-menu">
-                     <li><a class="" href="#about"><i class="fa fa-angle-double-right ml-15"></i> ¿Que es
-                           GymFuze?</a></li>
-                     <li><a class="" href="#funcionalidades"><i class="fa fa-angle-double-right ml-15"></i> ¿Que
-                           hace?</a></li>
-                     <li><a class="" href="#elegirnos"><i class="fa fa-angle-double-right ml-15"></i> ¿Por qué
-                           elegirnos?</a></li>
-                     <li><a class="" href="#precios"><i class="fa fa-angle-double-right ml-15"></i> Precios</a>
-                     </li>
-                     <li><a class="" href="#contacto"><i class="fa fa-angle-double-right ml-15"></i> Contacto</a></li>
-                  </ul>
-               </div>
-               <div class="col-md-4">
-                  <ul class="location">
-                     <li class="footer-left-h"><i class="fa fa-map-marker"></i>Dirección<br>
-                        Av. Alameda de la Federación 684
-                        <br>Paraná, Entre Ríos
-                     </li>
-                     <li class="footer-left-h"><i class="fa fa-phone"></i>Contactanos <br>+54 9 3435 332132
-                     </li>
-                     <li class="footer-left-h"><i class="fa fa-envelope-o"></i>Correo Electrónico<br>
-                        <a href=""> contacto@capasso.tech </a>
-                     </li>
-                  </ul>
-               </div>
-               <div class="col-md-12" style="padding-top: 20px;">
-                  <p class="color-gray"> Desarrollado por <a href="https://www.capassotech.com">CapassoTech </a></p>
-               </div>
-            </div>
-         </div>
+    <section id="diferenciales" class="dark-section">
+      <div class="container">
+        <h2>Diferenciales de GymFuze frente a otras apps para gimnasios</h2>
+        <div class="grid grid-2">
+          <article class="card">
+            <h3>Experiencia intuitiva</h3>
+            <p>Nuestro diseño centrado en el usuario facilita la adopción tanto para equipos administrativos como para alumnos nuevos.</p>
+          </article>
+          <article class="card">
+            <h3>Menos tareas repetitivas</h3>
+            <p>Automatizamos altas, recordatorios, reportes y comunicación para liberar tiempo a tu staff.</p>
+          </article>
+          <article class="card">
+            <h3>Mayor retención y motivación</h3>
+            <p>Funciones de seguimiento y feedback que generan cercanía entrenador–alumno y aumentan la fidelización.</p>
+          </article>
+          <article class="card">
+            <h3>Escalabilidad garantizada</h3>
+            <p>Ideal para estudios boutique, gimnasios en expansión o cadenas con múltiples sedes que necesitan control central.</p>
+          </article>
+        </div>
       </div>
-   </div>
-   <!--#End Our footer Area -->
-   <!-- The following is only needed when the video is in the html
-         otherwise the who .hero__overlay html can be removed -->
-   <div class="hero__overlay">
-      <div class="hero__modal">
-         <a class="hero__close" href="#">Close</a>
-         <iframe allowscriptaccess="always" id="hero-video" class="hero__player"
-            src="https://youtube.com/shorts/rkaH_82Rt44" frameborder="0" webkitallowfullscreen mozallowfullscreen
-            allowfullscreen></iframe>
-      </div>
-      <!-- /.hero__modal -->
-   </div>
-   <!-- /.hero__overlay -->
-   <!-- jQuery JS -->
-   <script src="assets/js/jquery-1.12.0.min.js"></script>
-   <script src="assets/vendors/popup/lightbox.min.js"></script>
-   <script type="text/javascript">
-      $(document).ready(function () {
-         $("div.bhoechie-tab-menu>div.list-group>a").click(function (e) {
-            e.preventDefault();
-            $(this).siblings('a.active').removeClass("active");
-            $(this).addClass("active");
-            var index = $(this).index();
-            $("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
-            $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
-         });
-      });
-   </script>
-   <script type="text/javascript">
-      $(document).ready(function () {
-         $(".currency_month").hide();
-         $("#radio1").click(function () {
-            $(".currency_year").hide();
-            $(".currency_month").show();
-         });
-         $("#radio2").click(function () {
-            $(".currency_month").hide();
-            $(".currency_year").show();
-         });
-      });
+    </section>
 
-      $('.tabs_label').click(function () {
-         $('.tabs_label').removeClass('active_t');
-         $(this).addClass('active_t');
-      })
-   </script>
-   <!-- Bootstrap JS -->
-   <script src="assets/js/bootstrap.min.js"></script>
-   <!-- Animate JS -->
-   <script src="assets/vendors/animate/wow.min.js"></script>
-   <script src="assets/vendors/sidebar/main.js"></script>
-   <!-- Owlcarousel JS -->
-   <script src="assets/vendors/owl_carousel/owl.carousel.min.js"></script>
-   <!-- Stellar JS-->
-   <!-- Theme JS -->
-   <script src="assets/js/theme.min.js"></script>
+    <section id="precios">
+      <div class="container">
+        <h2>Planes transparentes con prueba gratuita</h2>
+        <p class="section-intro">Comenzá hoy con GymFuze y probá todas las funcionalidades sin costo inicial. Elegí un modelo de suscripción accesible, adaptable a gimnasios pequeños, estudios independientes o grandes cadenas.</p>
+        <div class="pricing">
+          <h3>Prueba gratuita 100% funcional</h3>
+          <p>Explorá la plataforma durante los primeros días, migrá tus datos y capacitate junto a nuestro equipo.</p>
+          <ul>
+            <li>Suscripción mensual flexible según cantidad de alumnos activos.</li>
+            <li>Sin costos de implementación ocultos ni permanencia obligatoria.</li>
+            <li>Incluye soporte especializado y actualizaciones continuas.</li>
+          </ul>
+          <div class="hero__actions" style="justify-content: center;">
+            <a class="btn btn-primary" href="https://linktr.ee/gymfuze" target="_blank" rel="noopener noreferrer">Probar gratis</a>
+            <a class="btn btn-outline" style="border-color:#fff; color:#fff;" href="https://linktr.ee/gymfuze" target="_blank" rel="noopener noreferrer">Solicitar demo personalizada</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="dark-section">
+      <div class="container">
+        <h2>Preguntas frecuentes sobre la gestión de gimnasios con GymFuze</h2>
+        <div class="faq-item">
+          <h3>¿Cómo se diferencia GymFuze de otras apps para gimnasios?</h3>
+          <p>Integramos dos aplicaciones sincronizadas para alumnos y entrenadores, con foco en la personalización de la marca y la automatización de tareas administrativas que impactan directamente en la retención.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Puedo migrar mis datos actuales?</h3>
+          <p>Sí. Nuestro equipo te acompaña en la importación de alumnos, rutinas y planes de pago para que empieces a utilizar la plataforma sin fricciones.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Qué métodos de pago acepta la plataforma?</h3>
+          <p>GymFuze se integra con diferentes pasarelas locales e internacionales para que elijas las opciones más convenientes para tu negocio.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿La app está disponible en Android e iOS?</h3>
+          <p>Ambas apps están optimizadas para dispositivos móviles y accesibles desde navegadores web, lo que facilita la adopción inmediata por parte de tus alumnos.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonios">
+      <div class="container">
+        <h2>Testimonios de gimnasios y alumnos que eligieron GymFuze</h2>
+        <div class="testimonials grid grid-3">
+          <article class="testimonial">
+            <p>“Implementar GymFuze nos permitió reducir horas de administración y enfocarnos en mejorar nuestras clases. La comunicación con los alumnos es impecable.”</p>
+            <strong>María López</strong>
+            <span>Directora en Pulse Fitness</span>
+          </article>
+          <article class="testimonial">
+            <p>“Reservo mis turnos y veo mi rutina desde el celular. Los recordatorios me ayudan a no faltar y el seguimiento me mantiene motivado.”</p>
+            <strong>Sebastián Torres</strong>
+            <span>Alumno de entrenamiento funcional</span>
+          </article>
+          <article class="testimonial">
+            <p>“La app para entrenadores es súper intuitiva. Puedo gestionar grupos, enviar planes y controlar pagos en minutos.”</p>
+            <strong>Lorena Díaz</strong>
+            <span>Personal trainer independiente</span>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <h2>Transformá la gestión de tu gimnasio hoy mismo</h2>
+      <p>Digitalizá tus operaciones, motivá a tus alumnos y hacé crecer tu comunidad fitness con la plataforma más completa del mercado.</p>
+      <div class="footer-actions">
+        <a class="btn btn-primary" href="https://linktr.ee/gymfuze" target="_blank" rel="noopener noreferrer">Registrarme como Alumno</a>
+        <a class="btn btn-primary" style="background: var(--accent);" href="https://linktr.ee/gymfuze" target="_blank" rel="noopener noreferrer">Registrarme como Entrenador/Gimnasio</a>
+        <a class="btn btn-outline" style="border-color: rgba(255,255,255,0.6); color:#fff;" href="https://linktr.ee/gymfuze" target="_blank" rel="noopener noreferrer">Probar gratis</a>
+      </div>
+      <p style="margin-top:2rem; font-size:0.9rem; color:#97a6c6;">© <span id="year"></span> GymFuze. Plataforma integral de gestión de gimnasios.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 
 </html>

@@ -7,20 +7,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>GymFuze | App para gimnasios y entrenadores con gestión integral</title>
-  <meta name="description" content="GymFuze es la app para gimnasios, entrenadores y alumnos que simplifica reservas, rutinas, pagos y comunicación. Descubrí la plataforma con prueba gratuita." />
+  <meta name="description" content="GymFuze es la app para gimnasios, entrenadores y alumnos que simplifica reservas, rutinas con IA, pagos y comunicación. Descubrí la plataforma con prueba gratuita." />
   <meta name="keywords" content="app para gimnasios, app para entrenadores, app para alumnos de gimnasio, gestión de gimnasios, software para gimnasios, plataforma fitness" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://linktr.ee/gymfuze" />
 
   <meta property="og:title" content="GymFuze | Plataforma digital para gimnasios y entrenadores" />
-  <meta property="og:description" content="Gestioná alumnos, turnos, rutinas y pagos desde una sola app. Conectá entrenadores y alumnos con GymFuze." />
+  <meta property="og:description" content="Gestioná alumnos, turnos, rutinas con IA y pagos desde una sola app. Conectá entrenadores y alumnos con GymFuze." />
   <meta property="og:image" content="https://linktr.ee/og-image.jpg" />
   <meta property="og:url" content="https://linktr.ee/gymfuze" />
   <meta property="og:type" content="website" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="GymFuze | Plataforma digital para gimnasios y entrenadores" />
-  <meta name="twitter:description" content="Una app para alumnos y otra para entrenadores. Reservas, pagos y rutinas en un solo lugar." />
+  <meta name="twitter:description" content="Una app para alumnos y otra para entrenadores. Reservas, pagos y rutinas con IA en un solo lugar." />
   <meta name="twitter:url" content="https://linktr.ee/gymfuze" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -29,12 +29,13 @@
 
   <style>
     :root {
-      --primary: #4b7bec;
-      --secondary: #1e272e;
-      --accent: #32b486;
-      --light: #f5f7fb;
-      --dark: #0b1320;
-      --text: #283144;
+      --primary: #0a84ff;
+      --secondary: #102039;
+      --accent: #7bdc3f;
+      --light: #f2f6fb;
+      --dark: #071120;
+      --text: #1b2742;
+      --gradient: linear-gradient(135deg, #7bdc3f 0%, #0a84ff 100%);
       scroll-behavior: smooth;
     }
 
@@ -48,7 +49,7 @@
       margin: 0;
       font-family: 'Montserrat', sans-serif;
       color: var(--text);
-      background-color: #fff;
+      background-color: var(--light);
       line-height: 1.6;
     }
 
@@ -64,9 +65,22 @@
     }
 
     header {
-      background: linear-gradient(135deg, rgba(11, 19, 32, 0.9), rgba(75, 123, 236, 0.9)), url('assets/images/img-g.png') center/cover no-repeat;
+      background: radial-gradient(circle at top left, rgba(123, 220, 63, 0.25), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(10, 132, 255, 0.35), transparent 60%),
+        #071120;
       color: #fff;
-      padding: 4rem 1.5rem 5rem;
+      padding: 1.5rem 1.5rem 5.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(7, 17, 32, 0.4), rgba(10, 132, 255, 0.25));
+      pointer-events: none;
+      z-index: 0;
     }
 
     .container {
@@ -74,10 +88,33 @@
       margin: 0 auto;
     }
 
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 3rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .topbar img {
+      height: clamp(48px, 10vw, 72px);
+      width: auto;
+    }
+
+    .topbar .nav-actions {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
     .hero {
       display: grid;
       gap: 2.5rem;
       align-items: center;
+      position: relative;
+      z-index: 1;
     }
 
     .hero__content h1 {
@@ -100,10 +137,11 @@
     }
 
     .badge {
-      background: rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.18);
       border-radius: 999px;
-      padding: 0.4rem 1rem;
-      font-size: 0.9rem;
+      padding: 0.45rem 1.1rem;
+      font-size: 0.95rem;
+      letter-spacing: 0.01em;
     }
 
     .hero__actions {
@@ -126,20 +164,20 @@
     }
 
     .btn-primary {
-      background: var(--accent);
+      background: var(--gradient);
       color: #fff;
-      box-shadow: 0 12px 30px rgba(50, 180, 134, 0.4);
+      box-shadow: 0 14px 30px rgba(10, 132, 255, 0.35);
     }
 
     .btn-outline {
       background: transparent;
       color: #fff;
-      border: 1px solid rgba(255, 255, 255, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.55);
     }
 
     .btn:hover {
       transform: translateY(-3px);
-      box-shadow: 0 18px 36px rgba(11, 19, 32, 0.25);
+      box-shadow: 0 18px 36px rgba(7, 17, 32, 0.28);
     }
 
     section {
@@ -172,10 +210,10 @@
     }
 
     .card {
-      background: #fff;
-      border-radius: 18px;
-      padding: 1.8rem;
-      box-shadow: 0 18px 40px rgba(11, 19, 32, 0.08);
+      background: rgba(255, 255, 255, 0.92);
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 22px 45px rgba(16, 32, 57, 0.12);
     }
 
     .card h3 {
@@ -183,15 +221,15 @@
     }
 
     .icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 14px;
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
       display: grid;
       place-items: center;
       margin-bottom: 1rem;
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       color: #fff;
-      background: var(--primary);
+      background: var(--gradient);
     }
 
     .section-intro {
@@ -228,16 +266,16 @@
     }
 
     .dark-section {
-      background: var(--light);
+      background: #ffffff;
     }
 
     .pricing {
       text-align: center;
-      background: linear-gradient(135deg, #4b7bec, #32b486);
+      background: var(--gradient);
       color: #fff;
-      border-radius: 24px;
-      padding: 3rem 2rem;
-      box-shadow: 0 25px 45px rgba(0, 0, 0, 0.15);
+      border-radius: 26px;
+      padding: 3rem 2.5rem;
+      box-shadow: 0 30px 50px rgba(16, 32, 57, 0.18);
     }
 
     .pricing ul {
@@ -277,9 +315,9 @@
     }
 
     .testimonials {
-      background: linear-gradient(120deg, rgba(75, 123, 236, 0.1), rgba(50, 180, 134, 0.1));
-      border-radius: 20px;
-      padding: 2rem;
+      background: linear-gradient(120deg, rgba(10, 132, 255, 0.12), rgba(123, 220, 63, 0.12));
+      border-radius: 22px;
+      padding: 2.2rem;
     }
 
     .testimonial {
@@ -302,7 +340,7 @@
     footer {
       background: var(--dark);
       color: #d0d7e8;
-      padding: 3rem 1.5rem;
+      padding: 3.5rem 1.5rem;
       text-align: center;
     }
 
@@ -321,6 +359,64 @@
       gap: 1rem;
     }
 
+    .hero__media {
+      position: relative;
+    }
+
+    .hero__media .mockup {
+      background: rgba(10, 132, 255, 0.15);
+      border-radius: 28px;
+      padding: 1.2rem;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 30px 60px rgba(7, 17, 32, 0.35);
+    }
+
+    .hero__media .mockup img {
+      border-radius: 18px;
+    }
+
+    .floating-pill {
+      position: absolute;
+      background: rgba(7, 17, 32, 0.75);
+      border-radius: 999px;
+      padding: 0.6rem 1.2rem;
+      color: #fff;
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      box-shadow: 0 18px 35px rgba(7, 17, 32, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .floating-pill svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .floating-pill.green {
+      background: rgba(123, 220, 63, 0.85);
+      color: #071120;
+    }
+
+    @media (max-width: 720px) {
+      .hero__media {
+        display: grid;
+        gap: 0.75rem;
+        justify-items: start;
+      }
+
+      .hero__media .mockup {
+        width: 100%;
+      }
+
+      .floating-pill,
+      .floating-pill.green {
+        position: static !important;
+      }
+    }
+
     @media (min-width: 900px) {
       .hero {
         grid-template-columns: 1.1fr 0.9fr;
@@ -329,34 +425,54 @@
       .hero__media {
         justify-self: end;
       }
-
-      .hero__media img {
-        border-radius: 28px;
-        box-shadow: 0 30px 50px rgba(0, 0, 0, 0.35);
-      }
     }
   </style>
 </head>
 
 <body>
   <header>
+    <div class="container">
+      <div class="topbar">
+        <img src="logo.jpg" alt="Logo de GymFuze" />
+        <div class="nav-actions">
+          <a class="btn btn-outline" href="https://linktr.ee/gymfuze" target="_blank" rel="noopener noreferrer">Solicitar demo</a>
+          <a class="btn btn-primary" href="https://linktr.ee/gymfuze" target="_blank" rel="noopener noreferrer">Probar gratis</a>
+        </div>
+      </div>
+    </div>
     <div class="container hero">
       <div class="hero__content">
         <div class="badges" aria-label="Palabras clave destacadas">
           <span class="badge">App para gimnasios</span>
           <span class="badge">App para entrenadores</span>
           <span class="badge">App para alumnos de gimnasio</span>
+          <span class="badge">Rutinas creadas con IA</span>
         </div>
         <h1>GymFuze: la plataforma digital que conecta y organiza tu gimnasio</h1>
-        <p>Impulsá tu negocio fitness con dos aplicaciones integradas: una app intuitiva para tus alumnos y otra para entrenadores y gimnasios. Reservas, rutinas, pagos y comunicación directa en un solo ecosistema listo para escalar.</p>
+        <p>Impulsá tu negocio fitness con dos aplicaciones integradas: una app intuitiva para tus alumnos y otra para entrenadores y gimnasios. Generá rutinas con IA, gestioná pagos y mantené una comunicación directa en un ecosistema listo para escalar.</p>
         <div class="hero__actions">
           <a class="btn btn-primary" href="https://linktr.ee/gymfuze" target="_blank" rel="noopener noreferrer">Registrarme como Alumno</a>
           <a class="btn btn-outline" href="https://linktr.ee/gymfuze" target="_blank" rel="noopener noreferrer">Registrarme como Entrenador/Gimnasio</a>
-          <a class="btn btn-primary" style="background: var(--primary);" href="https://linktr.ee/gymfuze" target="_blank" rel="noopener noreferrer">Probar gratis</a>
         </div>
       </div>
       <div class="hero__media" aria-hidden="true">
-        <img src="assets/images/img-g.png" alt="Interfaz de la app GymFuze para alumnos y entrenadores" />
+        <div class="mockup">
+          <img src="assets/images/img-g.png" alt="Interfaz de la app GymFuze para alumnos y entrenadores" />
+        </div>
+        <div class="floating-pill" style="top: -18px; right: -10px;">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 3L4 7v6c0 5 4 8 8 8s8-3 8-8V7l-8-4Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          Seguridad de datos
+        </div>
+        <div class="floating-pill green" style="bottom: -16px; left: -12px;">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 4h7l2 3h7v10H4V4Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M9 14h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          Rutinas con IA listas en minutos
+        </div>
       </div>
     </div>
   </header>
@@ -365,7 +481,7 @@
     <section id="que-es-gymfuze" class="dark-section">
       <div class="container">
         <h2>¿Qué es GymFuze?</h2>
-        <p class="section-intro">GymFuze es una plataforma de gestión de gimnasios pensada para digitalizar tu negocio y acompañar la experiencia de entrenamiento. Con dos apps complementarias —una para alumnos y otra para entrenadores o gimnasios— centralizás turnos, rutinas, pagos y comunicación mientras mantenés la identidad de tu marca.</p>
+        <p class="section-intro">GymFuze es una plataforma de gestión de gimnasios pensada para digitalizar tu negocio y acompañar la experiencia de entrenamiento. Con dos apps complementarias —una para alumnos y otra para entrenadores o gimnasios— centralizás turnos, rutinas potenciadas con IA, pagos y comunicación.</p>
         <div class="grid grid-3">
           <article class="card">
             <div class="icon">1</div>
@@ -378,9 +494,9 @@
             <p>Organizá agendas, grupos, pagos y contenidos desde una consola centralizada con métricas claras y flujos automatizados.</p>
           </article>
           <article class="card">
-            <div class="icon">3</div>
-            <h3>Tu marca en primer plano</h3>
-            <p>Personalizá la app con los colores, el logo y el nombre de tu gimnasio para brindar una experiencia coherente y profesional.</p>
+            <div class="icon">🤖</div>
+            <h3>Rutinas con inteligencia artificial</h3>
+            <p>Generá planes inteligentes en segundos, adaptalos a cada alumno y actualizalos automáticamente con recomendaciones basadas en datos.</p>
           </article>
         </div>
       </div>
@@ -411,6 +527,11 @@
             <h3>Comunicación directa</h3>
             <p>Enviá mensajes al instante a tu entrenador o al gimnasio, resolvé dudas y recibí feedback personalizado.</p>
           </article>
+          <article class="card">
+            <div class="icon">🤖</div>
+            <h3>IA como tu entrenador asistente</h3>
+            <p>Recibí sugerencias inteligentes, ajustes automáticos y recomendaciones de ejercicios alineadas a tus objetivos.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -424,7 +545,7 @@
             <ul class="list">
               <li>Centralizá la administración de alumnos, clases, planes y pagos desde un panel único.</li>
               <li>Automatizá recordatorios y notificaciones para reducir tareas manuales y evitar moras.</li>
-              <li>Diseñá rutinas personalizadas con biblioteca multimedia y asignalas a cada miembro.</li>
+              <li>Diseñá rutinas personalizadas con biblioteca multimedia y potenciálas con IA en cuestión de segundos.</li>
               <li>Mantené la comunicación fluida con chats directos, anuncios y alertas programadas.</li>
               <li>Escalá a múltiples sucursales o franquicias con controles de acceso y reportes detallados.</li>
             </ul>
@@ -521,11 +642,15 @@
         <h2>Preguntas frecuentes sobre la gestión de gimnasios con GymFuze</h2>
         <div class="faq-item">
           <h3>¿Cómo se diferencia GymFuze de otras apps para gimnasios?</h3>
-          <p>Integramos dos aplicaciones sincronizadas para alumnos y entrenadores, con foco en la personalización de la marca y la automatización de tareas administrativas que impactan directamente en la retención.</p>
+          <p>Integramos dos aplicaciones sincronizadas para alumnos y entrenadores, potenciadas por IA para automatizar tareas administrativas y ofrecer rutinas dinámicas que mejoran la retención.</p>
         </div>
         <div class="faq-item">
           <h3>¿Puedo migrar mis datos actuales?</h3>
           <p>Sí. Nuestro equipo te acompaña en la importación de alumnos, rutinas y planes de pago para que empieces a utilizar la plataforma sin fricciones.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Cómo funciona la creación de rutinas con IA?</h3>
+          <p>Ingresás los objetivos, nivel y disponibilidad de cada alumno, y la IA de GymFuze genera un plan optimizado que podés ajustar, reutilizar y actualizar automáticamente según el progreso.</p>
         </div>
         <div class="faq-item">
           <h3>¿Qué métodos de pago acepta la plataforma?</h3>
@@ -565,10 +690,10 @@
   <footer>
     <div class="container">
       <h2>Transformá la gestión de tu gimnasio hoy mismo</h2>
-      <p>Digitalizá tus operaciones, motivá a tus alumnos y hacé crecer tu comunidad fitness con la plataforma más completa del mercado.</p>
+      <p>Digitalizá tus operaciones, motivá a tus alumnos y ofrecé rutinas inteligentes con la plataforma más completa del mercado.</p>
       <div class="footer-actions">
         <a class="btn btn-primary" href="https://linktr.ee/gymfuze" target="_blank" rel="noopener noreferrer">Registrarme como Alumno</a>
-        <a class="btn btn-primary" style="background: var(--accent);" href="https://linktr.ee/gymfuze" target="_blank" rel="noopener noreferrer">Registrarme como Entrenador/Gimnasio</a>
+        <a class="btn btn-primary" href="https://linktr.ee/gymfuze" target="_blank" rel="noopener noreferrer">Registrarme como Entrenador/Gimnasio</a>
         <a class="btn btn-outline" style="border-color: rgba(255,255,255,0.6); color:#fff;" href="https://linktr.ee/gymfuze" target="_blank" rel="noopener noreferrer">Probar gratis</a>
       </div>
       <p style="margin-top:2rem; font-size:0.9rem; color:#97a6c6;">© <span id="year"></span> GymFuze. Plataforma integral de gestión de gimnasios.</p>

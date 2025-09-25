@@ -171,31 +171,68 @@
       z-index: 1;
     }
 
-    .hero__copy h1 {
-      font-size: clamp(2.1rem, 4vw, 3.4rem);
-      line-height: 1.15;
-      margin: 0 0 1.5rem;
-    }
-
-    .hero__copy p {
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
-      max-width: 640px;
-    }
-
-    .hero__tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .tag {
-      padding: 0.45rem 1rem;
+    .hero__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.4rem 0.85rem;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.16);
-      font-size: 0.9rem;
-      letter-spacing: 0.02em;
+      background: rgba(255, 255, 255, 0.12);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.8rem;
+      margin-bottom: 1.3rem;
+    }
+
+    .hero__copy h1 {
+      font-size: clamp(2.4rem, 4.8vw, 3.8rem);
+      line-height: 1.1;
+      margin: 0 0 1.2rem;
+    }
+
+    .gradient-text {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero__lede {
+      font-size: 1.15rem;
+      margin-bottom: 1.8rem;
+      max-width: 640px;
+      color: rgba(255, 255, 255, 0.86);
+    }
+
+    .hero__list {
+      list-style: none;
+      margin: 0 0 2.2rem;
+      padding: 0;
+      display: grid;
+      gap: 0.9rem;
+      max-width: 620px;
+    }
+
+    .hero__list li {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: start;
+      gap: 0.8rem;
+      font-size: 1rem;
+    }
+
+    .hero__list li::before {
+      content: '✓';
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: rgba(123, 220, 63, 0.22);
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-top: 0.15rem;
     }
 
     .hero__actions {
@@ -204,38 +241,110 @@
       gap: 1rem;
     }
 
+    .hero__proof {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.5rem;
+      margin-top: 2.2rem;
+      color: rgba(255, 255, 255, 0.76);
+    }
+
+    .hero__proof-stars {
+      display: inline-flex;
+      gap: 0.25rem;
+      color: #ffc857;
+    }
+
     .hero__meta {
       display: grid;
       gap: 1rem;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      margin-top: 2.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      margin-top: 3rem;
     }
 
     .hero__stat {
-      background: rgba(7, 17, 32, 0.58);
+      background: rgba(7, 17, 32, 0.6);
       border-radius: 22px;
-      padding: 1.4rem 1.6rem;
+      padding: 1.6rem 1.8rem;
       border: 1px solid rgba(255, 255, 255, 0.18);
-      backdrop-filter: blur(4px);
+      backdrop-filter: blur(6px);
     }
 
     .hero__stat strong {
       display: block;
-      font-size: 2rem;
+      font-size: 2.1rem;
       font-weight: 700;
-      margin-bottom: 0.2rem;
+      margin-bottom: 0.25rem;
     }
 
     .hero__media {
       position: relative;
+      display: grid;
+      gap: 1.2rem;
     }
 
-    .hero__mockup {
-      background: rgba(10, 132, 255, 0.15);
-      border-radius: var(--radius-lg);
-      padding: 1.2rem;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 40px 80px rgba(7, 17, 32, 0.45);
+    .hero__spotlight {
+      background: rgba(7, 17, 32, 0.82);
+      border-radius: 26px;
+      padding: 2.2rem;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 40px 80px rgba(7, 17, 32, 0.55);
+      backdrop-filter: blur(8px);
+    }
+
+    .hero__spotlight h3 {
+      margin: 0 0 1rem;
+      color: #fff;
+      font-size: 1.2rem;
+    }
+
+    .hero__spotlight ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 0.8rem;
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .hero__spotlight li {
+      padding-left: 1.4rem;
+      position: relative;
+      font-size: 0.95rem;
+    }
+
+    .hero__spotlight li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.4rem;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(123, 220, 63, 0.18);
+    }
+
+    .hero__confidence {
+      display: grid;
+      gap: 0.9rem;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    }
+
+    .hero__confidence-card {
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 20px;
+      padding: 1rem 1.3rem;
+      color: #fff;
+      font-size: 0.9rem;
+      display: grid;
+      gap: 0.45rem;
+    }
+
+    .hero__confidence-card strong {
+      font-size: 1.2rem;
+      color: var(--accent);
     }
 
     .floating-pill {
@@ -572,31 +681,80 @@
 
       <div class="hero__body">
         <div class="hero__copy">
-          <div class="hero__tags">
-            <span class="tag">Pensado para dueños de gimnasios</span>
-            <span class="tag">Potencia a tus entrenadores</span>
-            <span class="tag">Rutinas generadas con IA</span>
-          </div>
-          <h1>La plataforma inteligente que ordena tu operación y fideliza a tus alumnos</h1>
-          <p>GymFuze integra en una sola plataforma todo lo que dueños de gimnasios y entrenadores necesitan para crecer: control de sedes, agenda colaborativa, cobros automatizados y rutinas creadas con inteligencia artificial para cada alumno.</p>
+          <span class="hero__eyebrow">Suite integral para gimnasios & estudios fitness</span>
+          <h1>Impulsá el crecimiento de tu gimnasio con <span class="gradient-text">automatización + IA</span></h1>
+          <p class="hero__lede">GymFuze centraliza la operación de tus sedes, entrenadores y alumnos para que escales sin fricción: control de agenda, cobranzas automáticas, rutinas inteligentes y comunicación en tiempo real.</p>
+          <ul class="hero__list">
+            <li>Panel maestro con KPIs de ocupación, ingresos y retención actualizados al instante.</li>
+            <li>Rutinas personalizadas generadas con IA y seguimiento 360° para cada alumno.</li>
+            <li>Dos apps sincronizadas: una para tu staff y otra para tus clientes, siempre conectadas.</li>
+          </ul>
           <div class="hero__actions">
-            <a class="btn btn-primary" href="https://linktr.ee/gymfuze" target="_blank" rel="noopener noreferrer">Hablar con ventas</a>
-            <a class="btn btn-secondary" href="https://linktr.ee/gymfuze" target="_blank" rel="noopener noreferrer">Ver funciones para entrenadores</a>
+            <a class="btn btn-primary" href="https://linktr.ee/gymfuze" target="_blank" rel="noopener noreferrer">Reservar demo guiada</a>
+            <a class="btn btn-secondary" href="https://linktr.ee/gymfuze" target="_blank" rel="noopener noreferrer">Descubrir funcionalidades</a>
+          </div>
+          <div class="hero__proof">
+            <span class="hero__proof-stars" aria-hidden="true">★ ★ ★ ★ ★</span>
+            <span>Calificación 4.9/5 según líderes de +120 gimnasios en Latam.</span>
           </div>
           <div class="hero__meta">
             <div class="hero__stat">
               <strong>+45%</strong>
-              Mayor retención de alumnos al usar rutinas personalizadas.
+              Crecimiento en retención al automatizar rutinas y seguimiento.
             </div>
             <div class="hero__stat">
               <strong>24/7</strong>
-              Gestión completa de turnos, pagos y comunicación desde la app.
+              Gestión de turnos, pagos y comunicación en un único panel.
             </div>
             <div class="hero__stat">
-              <strong>2 apps</strong>
-              Una para tu staff y otra para tus alumnos, sincronizadas en tiempo real.
+              <strong>Onboarding</strong>
+              Puesta en marcha asistida en menos de 72 horas para todo tu equipo.
             </div>
           </div>
+        </div>
+        <div class="hero__media">
+          <div class="hero__spotlight">
+            <h3>Qué resuelve GymFuze</h3>
+            <ul>
+              <li>Automatización de cobranzas y recordatorios con seguimiento en vivo.</li>
+              <li>Rutinas inteligentes con IA y biblioteca multimedia lista para compartir.</li>
+              <li>Comunicación directa y segmentada con alumnos desde la misma plataforma.</li>
+            </ul>
+          </div>
+          <div class="hero__confidence">
+            <div class="hero__confidence-card">
+              <strong>72h</strong>
+              Implementación guiada y migración de datos sin costo adicional.
+            </div>
+            <div class="hero__confidence-card">
+              <strong>Soporte VIP</strong>
+              Equipo especializado para acompañar tu operación diaria.
+            </div>
+          </div>
+          <span class="floating-pill" style="top: 6%; right: -12%;">
+            <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9.167 2.5h1.666v5.833H9.167V2.5ZM5.3 4.683 6.483 3.5 10 7.017 8.817 8.2 5.3 4.683ZM14.7 4.683 11.183 8.2 10 7.017l3.517-3.517 1.183 1.183ZM10 18.333c-3.221 0-5.833-2.612-5.833-5.833 0-3.222 2.612-5.833 5.833-5.833 3.222 0 5.833 2.611 5.833 5.833 0 3.221-2.611 5.833-5.833 5.833Zm0-1.666a4.167 4.167 0 1 0 0-8.333 4.167 4.167 0 0 0 0 8.333Z" fill="url(#hero-grad-reportes)" />
+              <defs>
+                <linearGradient id="hero-grad-reportes" x1="2" y1="2" x2="18" y2="18" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#0A84FF" />
+                  <stop offset="1" stop-color="#7BDC3F" />
+                </linearGradient>
+              </defs>
+            </svg>
+            Reportes en vivo
+          </span>
+          <span class="floating-pill" style="bottom: -4%; left: -8%;">
+            <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 4.167h10v1.666H5V4.167Zm1.667 3.333h6.666v1.667H6.667V7.5ZM5 12.5h10v1.667H5V12.5Zm-1.667-10C3.333 1.58 4.913 0 6.833 0h6.334C15.087 0 16.667 1.58 16.667 3.5v13c0 1.92-1.58 3.5-3.5 3.5H6.833c-1.92 0-3.5-1.58-3.5-3.5v-13Z" fill="url(#hero-grad-apps)" />
+              <defs>
+                <linearGradient id="hero-grad-apps" x1="2" y1="2" x2="18" y2="18" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#7BDC3F" />
+                  <stop offset="1" stop-color="#0A84FF" />
+                </linearGradient>
+              </defs>
+            </svg>
+            Apps para staff & alumnos
+          </span>
         </div>
       </div>
     </div>

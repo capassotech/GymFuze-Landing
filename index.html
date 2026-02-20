@@ -4,65 +4,118 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
-  <title>GymFuze | Plataforma para entrenadores y dueños de gimnasios</title>
+  <title>GymFuze | La app que ordena tu gimnasio y lo hace crecer solo</title>
   <meta name="description"
-    content="GymFuze centraliza reservas, rutinas creadas con IA, cobros y comunicación para entrenadores y dueños de gimnasios. Descubrí la plataforma con prueba gratuita." />
+    content="Administrá alumnos, pagos y rutinas desde un solo lugar. Una app para vos, otra para tus alumnos. Suscripción 100% online." />
   <meta name="keywords"
-    content="app para gimnasios, software para gimnasios, app para entrenadores, gestión de gimnasios, rutinas con IA" />
+    content="app para gimnasios, software gimnasios, gestión gimnasio, rutinas IA, cobros automáticos" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://linktr.ee/gymfuze" />
 
-  <meta property="og:title" content="GymFuze | Plataforma para entrenadores y dueños de gimnasios" />
+  <meta property="og:title" content="GymFuze | La app que ordena tu gimnasio" />
   <meta property="og:description"
-    content="Gestioná tus sedes, entrenadores y alumnos, generá rutinas con IA y automatizá tu operación con GymFuze." />
-  <meta property="og:image" content="https://linktr.ee/og-image.jpg" />
-  <meta property="og:url" content="https://linktr.ee/gymfuze" />
+    content="Administrá alumnos, pagos y rutinas desde un solo lugar. Una app para vos, otra para tus alumnos." />
   <meta property="og:type" content="website" />
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="GymFuze | Plataforma para entrenadores y dueños de gimnasios" />
-  <meta name="twitter:description"
-    content="La app integral que conecta entrenadores y alumnos con rutinas potenciadas por IA." />
-  <meta name="twitter:url" content="https://linktr.ee/gymfuze" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet" />
 
   <style>
     :root {
-      --primary: #0a84ff;
-      --secondary: #102039;
-      --accent: #7bdc3f;
-      --dark: #071120;
-      --light: #f6f8fb;
-      --text: #1b2742;
-      --radius-lg: 28px;
-      --gradient: linear-gradient(135deg, #0a84ff 0%, #7bdc3f 100%);
+      --bg: #0D0D0D;
+      --green: #7BC820;
+      --blue: #1A9FD4;
+      --white: #FFFFFF;
+      --gray: rgba(255, 255, 255, 0.7);
+      --gray-light: rgba(255, 255, 255, 0.5);
       scroll-behavior: smooth;
+    }
+
+    /* Grid fitness pattern - animated */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: 
+        linear-gradient(rgba(123, 200, 32, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(123, 200, 32, 0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      background-position: 0 0;
+      animation: gridShift 20s linear infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes gridShift {
+      0% { background-position: 0 0; }
+      100% { background-position: 60px 60px; }
+    }
+
+    /* Floating orbs */
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(123, 200, 32, 0.15) 0%, transparent 70%);
+      top: -100px;
+      right: -100px;
+      animation: float 15s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      text-align: center;
+      z-index: 1;
+    }
+
+    .hero-inner::before {
+      content: '';
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(26, 159, 212, 0.12) 0%, transparent 70%);
+      bottom: -50px;
+      left: -80px;
+      animation: float 12s ease-in-out infinite reverse;
+      animation-delay: -3s;
+      pointer-events: none;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(30px, -30px) scale(1.05); }
+      66% { transform: translate(-20px, 20px) scale(0.95); }
     }
 
     *,
     *::before,
     *::after {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      margin: 0;
-      font-family: 'Plus Jakarta Sans', 'Montserrat', sans-serif;
-      color: var(--text);
-      background-color: var(--light);
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--white);
       line-height: 1.6;
+      overflow-x: hidden;
+      position: relative;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
+    * {
+      -webkit-tap-highlight-color: transparent;
     }
 
     a {
@@ -70,66 +123,55 @@
       text-decoration: none;
     }
 
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
     .container {
-      width: min(1120px, 92vw);
+      width: min(1100px, 92vw);
       margin: 0 auto;
+      padding: 0 1rem;
     }
 
-    header.hero {
-      position: relative;
-      padding: 2.5rem 0 5.5rem;
-      background: radial-gradient(circle at 15% 20%, rgba(123, 220, 63, 0.18), transparent 55%),
-        radial-gradient(circle at 90% 10%, rgba(10, 132, 255, 0.26), transparent 65%),
-        var(--dark);
-      color: #fff;
-      overflow: hidden;
+    /* Header sticky */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 1rem 0;
+      background: rgba(13, 13, 13, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      transition: all 0.3s ease;
     }
 
-    header.hero::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(120deg, rgba(7, 17, 32, 0.4), rgba(10, 132, 255, 0.2));
-      pointer-events: none;
-    }
-
-    .hero__inner,
-    nav,
-    .hero__body {
-      position: relative;
-      z-index: 1;
-    }
-
-    nav {
+    .header-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 3.5rem;
-      gap: 1rem;
+      width: min(1100px, 92vw);
+      margin: 0 auto;
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
+    .logo {
+      display: block;
     }
 
-    .brand img {
-      height: clamp(48px, 8vw, 68px);
+    .logo img {
+      height: 36px;
       width: auto;
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
-    .brand span {
-      font-size: 1.15rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
+    .logo:hover img {
+      transform: scale(1.05);
     }
 
-    .nav-actions {
-      display: flex;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-      justify-content: flex-end;
+    .logo.hero-logo img {
+      height: clamp(48px, 10vw, 72px);
     }
 
     .btn {
@@ -137,926 +179,1524 @@
       align-items: center;
       justify-content: center;
       gap: 0.5rem;
-      padding: 0.9rem 1.8rem;
-      border-radius: 999px;
+      padding: 0.85rem 1.6rem;
+      border-radius: 12px;
       font-weight: 600;
       font-size: 0.95rem;
-      border: 1px solid transparent;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      font-family: inherit;
+      border: none;
       cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .btn-primary {
-      background: var(--gradient);
-      color: #fff;
-      box-shadow: 0 20px 40px rgba(10, 132, 255, 0.3);
-    }
-
-    .btn-secondary {
-      background: rgba(255, 255, 255, 0.12);
-      color: #fff;
-      border-color: rgba(255, 255, 255, 0.3);
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 24px 44px rgba(7, 17, 32, 0.28);
-    }
-
-    .hero__body {
-      display: grid;
-      gap: 3rem;
-      align-items: center;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero__eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.55rem;
-      padding: 0.4rem 0.85rem;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.12);
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      font-size: 0.8rem;
-      margin-bottom: 1.3rem;
-    }
-
-    .hero__copy h1 {
-      font-size: clamp(2.4rem, 4.8vw, 3.8rem);
-      line-height: 1.1;
-      margin: 0 0 1.2rem;
-    }
-
-    .gradient-text {
-      background: var(--gradient);
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-
-    .hero__lede {
-      font-size: 1.15rem;
-      margin-bottom: 1.8rem;
-      max-width: 640px;
-      color: rgba(255, 255, 255, 0.86);
-    }
-
-    .hero__list {
-      list-style: none;
-      margin: 0 0 2.2rem;
-      padding: 0;
-      display: grid;
-      gap: 0.9rem;
-      max-width: 620px;
-    }
-
-    .hero__list li {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      align-items: start;
-      gap: 0.8rem;
-      font-size: 1rem;
-    }
-
-    .hero__list li::before {
-      content: '✓';
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 26px;
-      height: 26px;
-      border-radius: 50%;
-      background: rgba(123, 220, 63, 0.22);
-      color: var(--accent);
-      font-weight: 700;
-      font-size: 0.95rem;
-      margin-top: 0.15rem;
-    }
-
-    .hero__actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .hero__proof {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 1.5rem;
-      margin-top: 2.2rem;
-      color: rgba(255, 255, 255, 0.76);
-    }
-
-    .hero__proof-stars {
-      display: inline-flex;
-      gap: 0.25rem;
-      color: #ffc857;
-    }
-
-    .hero__meta {
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      margin-top: 3rem;
-    }
-
-    .hero__stat {
-      background: rgba(7, 17, 32, 0.6);
-      border-radius: 22px;
-      padding: 1.6rem 1.8rem;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      backdrop-filter: blur(6px);
-    }
-
-    .hero__stat strong {
-      display: block;
-      font-size: 2.1rem;
-      font-weight: 700;
-      margin-bottom: 0.25rem;
-    }
-
-    .hero__media {
-      position: relative;
-      display: grid;
-      gap: 1.2rem;
-    }
-
-    .hero__spotlight {
-      background: rgba(7, 17, 32, 0.82);
-      border-radius: 26px;
-      padding: 2.2rem;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      box-shadow: 0 40px 80px rgba(7, 17, 32, 0.55);
-      backdrop-filter: blur(8px);
-    }
-
-    .hero__spotlight h3 {
-      margin: 0 0 1rem;
-      color: #fff;
-      font-size: 1.2rem;
-    }
-
-    .hero__spotlight ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: grid;
-      gap: 0.8rem;
-      color: rgba(255, 255, 255, 0.78);
-    }
-
-    .hero__spotlight li {
-      padding-left: 1.4rem;
-      position: relative;
-      font-size: 0.95rem;
-    }
-
-    .hero__spotlight li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0.4rem;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 0 6px rgba(123, 220, 63, 0.18);
-    }
-
-    .hero__confidence {
-      display: grid;
-      gap: 0.9rem;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    }
-
-    .hero__confidence-card {
-      background: rgba(255, 255, 255, 0.12);
-      border-radius: 20px;
-      padding: 1rem 1.3rem;
-      color: #fff;
-      font-size: 0.9rem;
-      display: grid;
-      gap: 0.45rem;
-    }
-
-    .hero__confidence-card strong {
-      font-size: 1.2rem;
-      color: var(--accent);
-    }
-
-    .floating-pill {
-      position: absolute;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: rgba(7, 17, 32, 0.85);
-      border-radius: 999px;
-      padding: 0.65rem 1.2rem;
-      color: #fff;
-      font-size: 0.85rem;
-      box-shadow: 0 20px 40px rgba(7, 17, 32, 0.45);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-    }
-
-    .floating-pill svg {
-      width: 16px;
-      height: 16px;
-    }
-
-    main section {
-      padding: 5rem 0;
-    }
-
-    h2 {
-      font-size: clamp(1.9rem, 3.5vw, 2.6rem);
-      color: var(--secondary);
-      margin-bottom: 1rem;
-    }
-
-    h3 {
-      color: var(--secondary);
-    }
-
-    .section-intro {
-      max-width: 720px;
-      margin-bottom: 2.5rem;
-    }
-
-    .grid {
-      display: grid;
-      gap: 1.8rem;
-    }
-
-    .grid-2 {
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    }
-
-    .grid-3 {
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    }
-
-    .audience-card,
-    .feature-card,
-    .value-card {
-      background: #fff;
-      border-radius: 24px;
-      padding: 2rem;
-      box-shadow: 0 25px 55px rgba(16, 32, 57, 0.12);
-    }
-
-    .audience-card h3 {
-      margin-top: 0;
-    }
-
-    .audience-card ul {
-      margin: 1.2rem 0 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .audience-card li {
-      padding-left: 1.6rem;
-      margin-bottom: 0.7rem;
-      position: relative;
-    }
-
-    .audience-card li::before {
-      content: '✔';
-      position: absolute;
-      left: 0;
-      top: 0;
-      color: var(--accent);
-      font-weight: 700;
-    }
-
-    .metrics-section {
-      background: linear-gradient(135deg, rgba(10, 132, 255, 0.12), rgba(123, 220, 63, 0.12));
-      border-radius: var(--radius-lg);
-      padding: 3rem;
-    }
-
-    .metric-item {
-      text-align: center;
-      padding: 1rem;
-    }
-
-    .metric-item strong {
-      display: block;
-      font-size: 2.2rem;
-      color: var(--secondary);
-    }
-
-    .feature-card h3 {
-      margin-top: 0;
-    }
-
-    .feature-card p {
-      margin-bottom: 1.2rem;
-    }
-
-    .feature-card ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .feature-card li {
-      padding-left: 1.5rem;
-      margin-bottom: 0.65rem;
-      position: relative;
-    }
-
-    .feature-card li::before {
-      content: '•';
-      position: absolute;
-      left: 0;
-      top: 0;
-      font-size: 1.4rem;
-      line-height: 1;
-      color: var(--accent);
-    }
-
-    .workflow {
-      display: grid;
-      gap: 2rem;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      counter-reset: steps;
-    }
-
-    .workflow-step {
-      background: #fff;
-      border-radius: 20px;
-      padding: 1.8rem;
-      box-shadow: 0 18px 40px rgba(16, 32, 57, 0.1);
+      background: linear-gradient(135deg, var(--green), #68a81a);
+      color: var(--bg);
       position: relative;
       overflow: hidden;
     }
 
-    .workflow-step::before {
-      counter-increment: steps;
-      content: counter(steps);
+    .btn-primary::before {
+      content: '';
       position: absolute;
-      right: 18px;
-      top: 12px;
-      font-size: 3rem;
-      font-weight: 700;
-      color: rgba(10, 132, 255, 0.12);
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.2), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
     }
 
-    .testimonial-group {
-      display: grid;
-      gap: 1.5rem;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    .btn-primary:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 12px 32px rgba(123, 200, 32, 0.4), 0 0 40px rgba(123, 200, 32, 0.15);
     }
 
-    .testimonial {
-      background: #fff;
-      border-radius: 20px;
-      padding: 1.8rem;
-      box-shadow: 0 18px 38px rgba(0, 0, 0, 0.08);
+    .btn-primary:hover::before {
+      opacity: 1;
     }
 
-    .testimonial p {
-      margin-bottom: 1rem;
+    .hero-cta .btn-primary,
+    .cta-final .btn-primary {
+      animation: btnGlow 2.5s ease-in-out infinite;
     }
 
-    .ai-section {
-      background: #fff;
-      border-radius: var(--radius-lg);
-      padding: 3rem;
-      box-shadow: 0 30px 60px rgba(16, 32, 57, 0.12);
+    @keyframes btnGlow {
+      0%, 100% { box-shadow: 0 4px 20px rgba(123, 200, 32, 0.3); }
+      50% { box-shadow: 0 4px 30px rgba(123, 200, 32, 0.5); }
     }
 
-    .ai-section ul {
-      margin: 1.5rem 0 0;
-      padding: 0;
-      list-style: none;
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255, 255, 255, 0.3);
     }
 
-    .ai-section li {
-      padding-left: 1.6rem;
+    .btn-outline:hover {
+      border-color: var(--green);
+      color: var(--green);
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      padding: 7rem 0 4rem;
+      display: flex;
+      align-items: center;
+      position: relative;
+      background: 
+        radial-gradient(ellipse 120% 80% at 50% -30%, rgba(123, 200, 32, 0.2), transparent 50%),
+        radial-gradient(ellipse 80% 60% at 100% 30%, rgba(26, 159, 212, 0.15), transparent 45%),
+        radial-gradient(ellipse 60% 40% at 0% 70%, rgba(123, 200, 32, 0.08), transparent 40%);
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(123, 200, 32, 0.3), rgba(26, 159, 212, 0.3), transparent);
+      opacity: 0.6;
+    }
+
+
+    .hero .logo {
+      display: inline-block;
+      font-size: 1.8rem;
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 6vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 1.2rem;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.1s forwards;
+    }
+
+    .hero h1 .accent {
+      background: linear-gradient(135deg, var(--green), var(--blue));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-badge {
+      border: 1px solid rgba(123, 200, 32, 0.2);
+      box-shadow: 0 0 20px rgba(123, 200, 32, 0.1);
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      color: var(--gray);
+      max-width: 560px;
+      margin: 0 auto 2rem;
+      line-height: 1.7;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.2s forwards;
+    }
+
+    .hero-cta {
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.3s forwards;
+    }
+
+    .hero-cta .btn {
+      padding: 1rem 2rem;
+      font-size: 1.05rem;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 999px;
+      font-size: 0.9rem;
+      color: var(--gray);
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.4s forwards;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hero-badge:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(123, 200, 32, 0.2);
+    }
+
+    .hero-badge .stars {
+      color: #FFC857;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Section base */
+    section {
+      padding: 4rem 0;
       position: relative;
     }
 
-    .ai-section li::before {
+    .section-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 2rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%) scaleX(0);
+      width: 80%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--green), var(--blue));
+      border-radius: 2px;
+      transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .section-title.visible::after,
+    .fade-in.visible ~ .section-title::after {
+      transform: translateX(-50%) scaleX(1);
+    }
+
+    .section-title.fade-in.visible::after {
+      transform: translateX(-50%) scaleX(1);
+    }
+
+    h1, h2, h3, .logo, .plan-name, .cta-final h2 {
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .fade-in {
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .pain-card:nth-child(1) { transition-delay: 0.05s; }
+    .pain-card:nth-child(2) { transition-delay: 0.15s; }
+    .pain-card:nth-child(3) { transition-delay: 0.25s; }
+    .app-card:nth-child(1) { transition-delay: 0.05s; }
+    .app-card:nth-child(2) { transition-delay: 0.15s; }
+    .feature-item:nth-child(1) { transition-delay: 0.05s; }
+    .feature-item:nth-child(2) { transition-delay: 0.1s; }
+    .feature-item:nth-child(3) { transition-delay: 0.15s; }
+    .feature-item:nth-child(4) { transition-delay: 0.2s; }
+    .feature-item:nth-child(5) { transition-delay: 0.25s; }
+    .testimonial-card:nth-child(1) { transition-delay: 0.05s; }
+    .testimonial-card:nth-child(2) { transition-delay: 0.15s; }
+    .testimonial-card:nth-child(3) { transition-delay: 0.25s; }
+
+    /* Problema */
+    .problema {
+      position: relative;
+      background: linear-gradient(180deg, transparent, rgba(255, 100, 100, 0.03) 30%, transparent);
+    }
+
+    .problema .section-title::before {
+      content: 'CAOS';
+      position: absolute;
+      top: -0.8em;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.35em;
+      font-weight: 900;
+      letter-spacing: 0.5em;
+      opacity: 0.15;
+    }
+
+    .problema .section-title {
+      position: relative;
+    }
+
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .pain-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 1.8rem;
+      text-align: center;
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.3s ease, box-shadow 0.4s ease;
+      clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+    }
+
+    .pain-card:hover {
+      transform: translateY(-8px) rotate(-0.5deg);
+      border-color: rgba(255, 100, 100, 0.3);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    }
+
+    .pain-icon {
+      width: 56px;
+      height: 56px;
+      margin: 0 auto 1rem;
+      background: rgba(255, 100, 100, 0.15);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      transition: transform 0.4s ease;
+    }
+
+    .pain-card:hover .pain-icon {
+      transform: scale(1.15);
+      animation: shake 0.5s ease;
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: scale(1.15) rotate(0); }
+      25% { transform: scale(1.15) rotate(-4deg); }
+      75% { transform: scale(1.15) rotate(4deg); }
+    }
+
+    .pain-card p {
+      color: var(--gray);
+      font-size: 1.05rem;
+    }
+
+    /* Solución */
+    .solucion {
+      position: relative;
+    }
+
+    .solucion::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--green), var(--blue), transparent);
+      opacity: 0.2;
+    }
+
+    .solucion .section-intro {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 2.5rem;
+      color: var(--gray);
+      font-size: 1.1rem;
+    }
+
+    .dos-apps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .app-card {
+      background: linear-gradient(135deg, rgba(123, 200, 32, 0.12), rgba(26, 159, 212, 0.08));
+      border: 1px solid rgba(123, 200, 32, 0.25);
+      border-radius: 16px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+    }
+
+    .app-card:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 16px 40px rgba(123, 200, 32, 0.25);
+    }
+
+    .app-card .icon {
+      transition: transform 0.4s ease;
+    }
+
+    .app-card:hover .icon {
+      transform: scale(1.2) rotate(5deg);
+    }
+
+    .app-card .icon {
+      font-size: 2.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .app-card strong {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--white);
+    }
+
+    .app-card p {
+      font-size: 0.95rem;
+      color: var(--gray);
+    }
+
+    .features-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      background: rgba(255, 255, 255, 0.04);
+      padding: 1.2rem 1.5rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-left: 3px solid var(--green);
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .feature-item:hover {
+      background: rgba(123, 200, 32, 0.08);
+      transform: translateX(4px);
+    }
+
+    .feature-item .check {
+      color: var(--green);
+      font-size: 1.25rem;
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+
+    .feature-item:hover .check {
+      transform: scale(1.2);
+    }
+
+    .feature-item span {
+      color: var(--gray);
+      font-size: 1rem;
+    }
+
+    /* Screenshots */
+    .screenshots {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .screenshots-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      align-items: start;
+    }
+
+    @media (max-width: 768px) {
+      .screenshots-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .screenshots .container {
+      text-align: center;
+    }
+
+    .screenshots .screenshots-grid {
+      text-align: left;
+      margin-top: 2rem;
+    }
+
+    .screenshots .section-title {
+      margin-bottom: 0;
+    }
+
+    .screenshot-group h3 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .screenshot-group.admin h3 { color: var(--green); }
+    .screenshot-group.usuario h3 { color: var(--blue); }
+
+    .screenshot-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    @media (max-width: 900px) {
+      .screenshot-group.usuario .screenshot-strip {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .screenshot-group.usuario .screenshot-wrap img {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .screenshot-strip {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .screenshot-group.usuario .screenshot-strip {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .screenshot-wrap {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .screenshot-wrap:hover {
+      transform: scale(1.03);
+      box-shadow: 0 25px 60px rgba(123, 200, 32, 0.15);
+    }
+
+    .screenshot-wrap img {
+      width: 100%;
+      height: auto;
+      display: block;
+      max-width: 100%;
+    }
+
+    .screenshot-group.usuario .screenshot-strip {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .screenshot-group.usuario .screenshot-wrap img {
+      max-width: 160px;
+      margin: 0 auto;
+    }
+
+    .screenshot-wrap figcaption {
+      padding: 0.5rem;
+      font-size: 0.8rem;
+      color: var(--gray-light);
+      text-align: center;
+      background: rgba(0,0,0,0.3);
+    }
+
+    .screenshot-wrap figcaption::after {
+      content: ' · Clic para ampliar';
+      opacity: 0.7;
+      font-size: 0.75em;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(0, 0, 0, 0.95);
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      cursor: pointer;
+    }
+
+    .lightbox.active {
+      display: flex;
+      animation: lightboxIn 0.3s ease;
+    }
+
+    @keyframes lightboxIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .lightbox img {
+      max-width: 95vw;
+      max-height: 95vh;
+      object-fit: contain;
+      border-radius: 8px;
+      cursor: default;
+      pointer-events: none;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      width: 44px;
+      height: 44px;
+      border: none;
+      background: rgba(255,255,255,0.1);
+      color: white;
+      font-size: 1.5rem;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+
+    .lightbox-close:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    /* Prueba social */
+    .testimonios {
+      background: linear-gradient(180deg, transparent, rgba(26, 159, 212, 0.04));
+    }
+
+    .testimonial-card {
+      position: relative;
+    }
+
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: 0.5rem;
+      left: 1rem;
+      font-size: 3rem;
+      font-family: Orbitron, sans-serif;
+      color: var(--green);
+      opacity: 0.3;
+      line-height: 1;
+      transition: transform 0.4s ease, opacity 0.4s ease;
+    }
+
+    .testimonial-card:hover::before {
+      transform: scale(1.2);
+      opacity: 0.5;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .testimonial-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      padding: 1.8rem 1.8rem 1.8rem 2.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(26, 159, 212, 0.3);
+    }
+
+    .testimonial-card p {
+      color: var(--gray);
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 1.2rem;
+      font-style: italic;
+    }
+
+    .testimonial-card strong {
+      display: block;
+      color: var(--white);
+      font-size: 1rem;
+    }
+
+    .testimonial-card span {
+      font-size: 0.9rem;
+      color: var(--gray-light);
+    }
+
+    .metrics-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem;
+      background: linear-gradient(135deg, rgba(123, 200, 32, 0.1), rgba(26, 159, 212, 0.1));
+      border-radius: 16px;
+      max-width: 800px;
+      margin: 0 auto;
+      border: 1px solid rgba(123, 200, 32, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .metrics-bar::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--green), var(--blue), var(--green));
+      background-size: 200% 100%;
+      opacity: 0.8;
+      animation: gradientMove 3s ease infinite;
+    }
+
+    .metric {
+      transition: transform 0.3s ease;
+    }
+
+    .metric:hover {
+      transform: scale(1.08);
+    }
+
+    .metric {
+      text-align: center;
+    }
+
+    .metrics-bar .metric strong {
+      display: block;
+      font-size: 1.8rem;
+      color: var(--green);
+      margin-bottom: 0.25rem;
+    }
+
+    .metric span {
+      font-size: 0.95rem;
+      color: var(--gray);
+    }
+
+    /* Planes */
+    #planes {
+      scroll-margin-top: 80px;
+    }
+
+    .planes-intro {
+      text-align: center;
+      color: var(--gray);
+      margin-bottom: 2.5rem;
+    }
+
+    .planes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      align-items: stretch;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .plan-single {
+      max-width: 420px;
+      justify-content: center;
+    }
+
+    .plan-single .plan-card.featured::before {
+      display: none;
+    }
+
+    .plan-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .plan-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--green), var(--blue), var(--green));
+      background-size: 200% 100%;
+      animation: gradientMove 4s ease infinite;
+    }
+
+    @keyframes gradientMove {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    .plan-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      border-color: rgba(123, 200, 32, 0.5);
+      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4), 0 0 60px rgba(123, 200, 32, 0.15);
+    }
+
+    .plan-card.featured {
+      border-color: var(--green);
+      background: linear-gradient(180deg, rgba(123, 200, 32, 0.15), rgba(255, 255, 255, 0.03));
+      position: relative;
+    }
+
+    .plan-card.featured::before {
+      content: 'Recomendado';
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--green);
+      color: var(--bg);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.35rem 1rem;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .plan-name {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .plan-price {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--green);
+      margin-bottom: 0.25rem;
+    }
+
+    .plan-price span {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--gray);
+    }
+
+    .plan-features {
+      list-style: none;
+      margin: 1.5rem 0 2rem;
+      flex-grow: 1;
+    }
+
+    .plan-features li {
+      padding: 0.5rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+      color: var(--gray);
+      font-size: 0.95rem;
+    }
+
+    .plan-features li::before {
       content: '✓';
       position: absolute;
       left: 0;
-      top: 0;
-      color: var(--primary);
+      color: var(--green);
       font-weight: 700;
     }
 
-    .pricing {
-      background: var(--gradient);
-      color: #fff;
-      border-radius: var(--radius-lg);
-      padding: 3.5rem 3rem;
+    .plan-card .btn {
+      width: 100%;
+      padding: 1rem 1.5rem;
+      margin-top: auto;
+    }
+
+    .plan-trial {
+      font-size: 0.85rem;
+      color: var(--gray-light);
       text-align: center;
-      box-shadow: 0 35px 60px rgba(16, 32, 57, 0.22);
+      margin-top: 1.5rem;
     }
 
-    .pricing ul {
-      list-style: none;
-      padding: 0;
-      margin: 2rem auto 2.5rem;
-      max-width: 480px;
-      text-align: left;
+    .section-cta {
+      text-align: center;
+      margin-top: 2rem;
     }
 
-    .pricing li {
-      margin-bottom: 0.75rem;
-      padding-left: 1.4rem;
-      position: relative;
+    .section-cta .btn {
+      padding: 0.9rem 1.8rem;
     }
 
-    .pricing li::before {
-      content: '✔';
-      position: absolute;
-      left: 0;
-      top: 0;
-      color: #fff;
-      font-weight: 700;
-    }
-
-    .faq {
-      background: #fff;
-      border-radius: var(--radius-lg);
-      padding: 3rem;
-      box-shadow: 0 24px 48px rgba(16, 32, 57, 0.12);
+    /* FAQ */
+    .faq-list {
+      max-width: 680px;
+      margin: 0 auto;
     }
 
     .faq-item {
-      padding: 1.4rem 0;
-      border-bottom: 1px solid #d9deeb;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .faq-item:last-child {
-      border-bottom: none;
+    .faq-item:first-child {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
 
+    .faq-trigger {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 0;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 1.05rem;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      text-align: left;
+      transition: color 0.2s ease;
+    }
+
+    .faq-trigger:hover {
+      color: var(--green);
+    }
+
+    .faq-trigger .icon {
+      flex-shrink: 0;
+      margin-left: 1rem;
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.3s ease;
+      color: var(--gray);
+    }
+
+    .faq-trigger:hover .icon {
+      color: var(--green);
+    }
+
+    .faq-item.open .faq-trigger .icon {
+      transform: rotate(180deg);
+      color: var(--green);
+    }
+
+    .faq-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+
+    .faq-content-inner {
+      padding: 0 0 1.25rem;
+      color: var(--gray);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    /* CTA final */
     .cta-final {
-      background: var(--dark);
-      color: #d0d7e8;
       text-align: center;
-      padding: 4rem 0 3rem;
+      padding: 5rem 0;
+      position: relative;
+      background: 
+        radial-gradient(ellipse 100% 60% at 50% 100%, rgba(123, 200, 32, 0.15), transparent 50%),
+        radial-gradient(ellipse 80% 40% at 50% 100%, rgba(26, 159, 212, 0.1), transparent 40%);
+    }
+
+    .cta-final::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(123, 200, 32, 0.5), rgba(26, 159, 212, 0.5), transparent);
     }
 
     .cta-final h2 {
-      color: #fff;
-      margin-bottom: 1rem;
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 700;
+      margin-bottom: 0.75rem;
     }
 
     .cta-final p {
-      margin: 0 auto 2rem;
-      max-width: 580px;
+      color: var(--gray);
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .cta-actions {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1rem;
+    .cta-final .btn {
+      padding: 1.1rem 2.2rem;
+      font-size: 1.1rem;
     }
 
     footer {
-      margin-top: 2rem;
+      text-align: center;
+      padding: 2rem;
       font-size: 0.9rem;
-      color: #7e8bad;
+      color: var(--gray-light);
     }
 
-    @media (min-width: 980px) {
-      .hero__body {
-        grid-template-columns: 1.1fr 0.9fr;
+    /* Responsive - Mobile first */
+    @media (max-width: 768px) {
+      .container {
+        width: min(100%, 94vw);
+        padding: 0 1rem;
       }
 
-      .hero__media {
-        justify-self: end;
-      }
-    }
-
-    @media (max-width: 720px) {
-      header.hero {
-        padding: 2rem 0 4rem;
+      .header {
+        padding: 0.75rem 1rem;
       }
 
-      nav {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 1.25rem;
-      }
-
-      .nav-actions {
+      .header-inner {
         width: 100%;
-        justify-content: center;
+        max-width: 100%;
+        padding: 0 0.5rem;
       }
 
-      .nav-actions .btn {
-        flex: 1;
-        min-width: 140px;
+      .header .btn {
+        white-space: nowrap;
+        padding: 0.65rem 1rem;
       }
 
-      .hero__lede {
-        font-size: 1.05rem;
+      .logo img {
+        height: 30px;
       }
 
-      .hero__actions {
-        flex-direction: column;
-        align-items: stretch;
+      .btn {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
       }
 
-      .hero__actions .btn {
+      section {
+        padding: 2.5rem 0;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 5.5rem 0 3rem;
+      }
+
+      .hero h1 {
+        font-size: clamp(1.5rem, 5.5vw, 2rem);
+        line-height: 1.25;
+      }
+
+      .hero-sub {
+        font-size: 0.95rem;
+      }
+
+      .hero-cta .btn {
         width: 100%;
+        max-width: 320px;
+        padding: 1rem 1.5rem;
       }
 
-      .hero__proof {
-        justify-content: center;
-        text-align: center;
+      .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
       }
 
-      .hero__meta {
+      .section-title::after {
+        width: 60%;
+      }
+
+      .dos-apps {
         grid-template-columns: 1fr;
-      }
-
-      .hero__media {
-        display: grid;
         gap: 1rem;
       }
 
-      .floating-pill {
-        position: static !important;
+      .pain-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
       }
 
-      main section {
-        padding: 3.5rem 0;
+      .pain-card {
+        padding: 1.4rem;
       }
 
-      .ai-section,
-      .metrics-section,
-      .pricing,
-      .faq {
-        padding: 2.5rem 1.6rem;
-      }
-    }
-
-    @media (max-width: 520px) {
-      .container {
-        width: min(100%, 92vw);
+      .features-list {
+        grid-template-columns: 1fr;
       }
 
-      .brand {
-        justify-content: center;
+      .feature-item {
+        padding: 1rem 1.2rem;
       }
 
-      .hero__eyebrow {
-        font-size: 0.72rem;
-        letter-spacing: 0.14em;
+      .screenshots-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
       }
 
-      .hero__copy h1 {
-        font-size: clamp(2.1rem, 8vw, 2.6rem);
+      .screenshot-group h3 {
+        font-size: 1.1rem;
       }
 
-      .hero__lede {
-        font-size: 1rem;
-      }
-
-      .hero__list {
+      .screenshot-strip,
+      .screenshot-group.admin .screenshot-strip,
+      .screenshot-group.usuario .screenshot-strip {
+        grid-template-columns: repeat(2, 1fr);
         gap: 0.75rem;
       }
 
-      .hero__spotlight,
-      .audience-card,
-      .feature-card,
-      .value-card,
-      .workflow-step,
-      .testimonial {
-        padding: 1.6rem;
+      .testimonial-grid {
+        grid-template-columns: 1fr;
       }
 
-      .metrics-section {
-        padding: 2.5rem 1.4rem;
+      .testimonial-card {
+        padding: 1.4rem 1.4rem 1.4rem 2rem;
+      }
+
+      .metrics-bar {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem;
+      }
+
+      .plan-single {
+        max-width: 100%;
+      }
+
+      .plan-card {
+        padding: 1.5rem;
+      }
+
+      .plan-price {
+        font-size: 1.8rem;
+      }
+
+      .faq-trigger {
+        font-size: 0.95rem;
+        padding: 1rem 0;
       }
 
       .cta-final {
-        padding: 3rem 1.4rem 2.5rem;
+        padding: 3rem 0;
+      }
+
+      .cta-final h2 {
+        font-size: 1.5rem;
       }
 
       .cta-final p {
-        font-size: 0.95rem;
+        font-size: 1rem;
       }
+
+      .cta-final .btn {
+        width: 100%;
+        max-width: 320px;
+      }
+
+      footer {
+        padding: 1.5rem 1rem;
+        font-size: 0.85rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header {
+        padding-left: max(1rem, env(safe-area-inset-left));
+        padding-right: max(1rem, env(safe-area-inset-right));
+      }
+
+      .hero {
+        padding-top: 5rem;
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
+      }
+
+      .hero h1 {
+        font-size: 1.4rem;
+      }
+
+      .hero-badge {
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 0.85rem;
+      }
+
+      .section-title {
+        font-size: 1.35rem;
+      }
+
+      .planes-grid {
+        grid-template-columns: 1fr;
+      }
+
     }
   </style>
 </head>
 
 <body>
-  <header class="hero">
-    <div class="container hero__inner">
-      <nav>
-        <div class="brand">
-          <img src="logo.jpg" alt="Logo de GymFuze" />
-        </div>
-        <div class="nav-actions">
-          <a class="btn btn-secondary" href="https://linktr.ee/gymfuze" target="_blank" rel="noopener noreferrer">Solicitar demo</a>
-          <a class="btn btn-primary" href="https://linktr.ee/gymfuze" target="_blank" rel="noopener noreferrer">Comenzar prueba gratuita</a>
-        </div>
-      </nav>
-
-      <div class="hero__body">
-        <div class="hero__copy">
-          <span class="hero__eyebrow">Suite integral para gimnasios & estudios fitness</span>
-          <h1>Impulsá el crecimiento de tu gimnasio con <span class="gradient-text">automatización + IA</span></h1>
-          <p class="hero__lede">GymFuze centraliza la operación de tus sedes, entrenadores y alumnos para que escales sin fricción: control de agenda, cobranzas automáticas, rutinas inteligentes y comunicación en tiempo real.</p>
-          <ul class="hero__list">
-            <li>Panel maestro con KPIs de ocupación, ingresos y retención actualizados al instante.</li>
-            <li>Rutinas personalizadas generadas con IA y seguimiento 360° para cada alumno.</li>
-            <li>Dos apps sincronizadas: una para tu staff y otra para tus clientes, siempre conectadas.</li>
-          </ul>
-          <div class="hero__actions">
-            <a class="btn btn-primary" href="https://linktr.ee/gymfuze" target="_blank" rel="noopener noreferrer">Reservar demo guiada</a>
-            <a class="btn btn-secondary" href="https://linktr.ee/gymfuze" target="_blank" rel="noopener noreferrer">Descubrir funcionalidades</a>
-          </div>
-          <div class="hero__proof">
-            <span class="hero__proof-stars" aria-hidden="true">★ ★ ★ ★ ★</span>
-            <span>Calificación 4.9/5 según líderes de +120 gimnasios en Latam.</span>
-          </div>
-          <div class="hero__meta">
-            <div class="hero__stat">
-              <strong>+45%</strong>
-              Crecimiento en retención al automatizar rutinas y seguimiento.
-            </div>
-            <div class="hero__stat">
-              <strong>24/7</strong>
-              Gestión de turnos, pagos y comunicación en un único panel.
-            </div>
-            <div class="hero__stat">
-              <strong>Onboarding</strong>
-              Puesta en marcha asistida en menos de 72 horas para todo tu equipo.
-            </div>
-          </div>
-        </div>
-        <div class="hero__media">
-          <div class="hero__spotlight">
-            <h3>Qué resuelve GymFuze</h3>
-            <ul>
-              <li>Automatización de cobranzas y recordatorios con seguimiento en vivo.</li>
-              <li>Rutinas inteligentes con IA y biblioteca multimedia lista para compartir.</li>
-              <li>Comunicación directa y segmentada con alumnos desde la misma plataforma.</li>
-            </ul>
-          </div>
-          <div class="hero__confidence">
-            <div class="hero__confidence-card">
-              <strong>72h</strong>
-              Implementación guiada y migración de datos sin costo adicional.
-            </div>
-            <div class="hero__confidence-card">
-              <strong>Soporte VIP</strong>
-              Equipo especializado para acompañar tu operación diaria.
-            </div>
-          </div>
-          <span class="floating-pill" style="top: 6%; right: -12%;">
-            <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9.167 2.5h1.666v5.833H9.167V2.5ZM5.3 4.683 6.483 3.5 10 7.017 8.817 8.2 5.3 4.683ZM14.7 4.683 11.183 8.2 10 7.017l3.517-3.517 1.183 1.183ZM10 18.333c-3.221 0-5.833-2.612-5.833-5.833 0-3.222 2.612-5.833 5.833-5.833 3.222 0 5.833 2.611 5.833 5.833 0 3.221-2.611 5.833-5.833 5.833Zm0-1.666a4.167 4.167 0 1 0 0-8.333 4.167 4.167 0 0 0 0 8.333Z" fill="url(#hero-grad-reportes)" />
-              <defs>
-                <linearGradient id="hero-grad-reportes" x1="2" y1="2" x2="18" y2="18" gradientUnits="userSpaceOnUse">
-                  <stop stop-color="#0A84FF" />
-                  <stop offset="1" stop-color="#7BDC3F" />
-                </linearGradient>
-              </defs>
-            </svg>
-            Reportes en vivo
-          </span>
-          <span class="floating-pill" style="bottom: -4%; left: -8%;">
-            <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5 4.167h10v1.666H5V4.167Zm1.667 3.333h6.666v1.667H6.667V7.5ZM5 12.5h10v1.667H5V12.5Zm-1.667-10C3.333 1.58 4.913 0 6.833 0h6.334C15.087 0 16.667 1.58 16.667 3.5v13c0 1.92-1.58 3.5-3.5 3.5H6.833c-1.92 0-3.5-1.58-3.5-3.5v-13Z" fill="url(#hero-grad-apps)" />
-              <defs>
-                <linearGradient id="hero-grad-apps" x1="2" y1="2" x2="18" y2="18" gradientUnits="userSpaceOnUse">
-                  <stop stop-color="#7BDC3F" />
-                  <stop offset="1" stop-color="#0A84FF" />
-                </linearGradient>
-              </defs>
-            </svg>
-            Apps para staff & alumnos
-          </span>
-        </div>
-      </div>
+  <header class="header">
+    <div class="header-inner">
+      <a href="#" class="logo"><img src="assets/images/logo.png" alt="GymFuze" /></a>
+      <a href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=a52abbab6bc14782a7280dfe6ca09800" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Suscribirme →</a>
     </div>
   </header>
 
-  <main>
-    <section>
-      <div class="container">
-        <h2>Diseñado para quienes lideran el negocio fitness</h2>
-        <p class="section-intro">GymFuze combina herramientas estratégicas para dueños de gimnasios y flujos sencillos para entrenadores. Así podés ordenar la operación, multiplicar la productividad y ofrecer experiencias consistentes en cada sede.</p>
-        <div class="grid grid-2">
-          <article class="audience-card">
-            <h3>Dueños y gerentes de gimnasios</h3>
-            <p>Visibilidad total del negocio, control financiero y reportes en tiempo real para tomar decisiones con datos.</p>
-            <ul>
-              <li>Panel maestro con métricas clave de ocupación y facturación.</li>
-              <li>Gestión de múltiples sedes, convenios y membresías.</li>
-              <li>Automatización de cobros, recordatorios y vencimientos.</li>
-            </ul>
-          </article>
-          <article class="audience-card">
-            <h3>Entrenadores y coordinadores</h3>
-            <p>Agendas claras, rutinas inteligentes y comunicación directa con cada alumno sin hojas de cálculo ni mensajes dispersos.</p>
-            <ul>
-              <li>Rutinas personalizadas con IA listas para compartir.</li>
-              <li>Seguimiento de progreso y feedback en tiempo real.</li>
-              <li>Biblioteca de ejercicios, planes y contenidos multimedia.</li>
-            </ul>
-          </article>
-        </div>
+  <section class="hero">
+    <div class="container hero-inner">
+      <a href="#" class="logo hero-logo"><img src="assets/images/logo.png" alt="GymFuze" /></a>
+      <h1>La app que <span class="accent">ordena</span> tu gimnasio</h1>
+      <p class="hero-sub">Administrá alumnos, cobros y rutinas desde la PC o el celular. Una plataforma para vos, otra para tus alumnos que entrenan.</p>
+      <div class="hero-cta">
+        <a href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=a52abbab6bc14782a7280dfe6ca09800" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Quiero empezar ahora →</a>
       </div>
-    </section>
-
-    <section>
-      <div class="container metrics-section">
-        <div class="grid grid-3">
-          <div class="metric-item">
-            <strong>60%</strong>
-            Reducción de tareas administrativas repetitivas.
-          </div>
-          <div class="metric-item">
-            <strong>+30%</strong>
-            Incremento en ventas cruzadas de servicios premium.
-          </div>
-          <div class="metric-item">
-            <strong>7 días</strong>
-            Para implementar GymFuze con acompañamiento experto.
-          </div>
-        </div>
+      <div class="hero-badge">
+        <span class="stars">★ 4.9/5</span>
+        <span>· +120 gimnasios en Latam</span>
       </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <h2>Tu operación completa, en una sola plataforma</h2>
-        <p class="section-intro">Estructuramos GymFuze en módulos que resuelven las prioridades de negocio: atraer, convertir y retener. Cada función está sincronizada para que nada quede fuera de control.</p>
-        <div class="grid grid-2">
-          <article class="feature-card">
-            <h3>Gestión de sedes y clases</h3>
-            <p>Configurá horarios, cupos y perfiles de entrenadores en minutos con visibilidad total de disponibilidad.</p>
-            <ul>
-              <li>Agenda colaborativa con esperas y lista inteligente.</li>
-              <li>Check-in digital y control de acceso en tiempo real.</li>
-              <li>Reportes de asistencia y utilización por sala.</li>
-            </ul>
-          </article>
-          <article class="feature-card">
-            <h3>Rutinas impulsadas por IA</h3>
-            <p>Nuestra inteligencia artificial sugiere planes personalizados basados en objetivos, historial y disponibilidad.</p>
-            <ul>
-              <li>Biblioteca inteligente de ejercicios con multimedia.</li>
-              <li>Ajustes automáticos según desempeño registrado.</li>
-              <li>Versionado de rutinas y plantillas reutilizables.</li>
-            </ul>
-          </article>
-          <article class="feature-card">
-            <h3>Experiencia del alumno</h3>
-            <p>Aplicación móvil intuitiva para reservar, pagar y seguir su plan sin depender de llamadas o mensajes.</p>
-            <ul>
-              <li>Recordatorios push, seguimiento de hábitos y logros.</li>
-              <li>Pagos integrados y facturas automáticas.</li>
-              <li>Canales directos de chat con entrenadores.</li>
-            </ul>
-          </article>
-          <article class="feature-card">
-            <h3>Control financiero y marketing</h3>
-            <p>Gestioná membresías, promociones y campañas con información consolidada.</p>
-            <ul>
-              <li>Automatización de cobranzas con múltiples medios de pago.</li>
-              <li>Segmentación de clientes y envíos masivos.</li>
-              <li>Reportes de ingresos, churn y proyecciones.</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container ai-section">
-        <h2>Rutinas creadas con IA para cada perfil</h2>
-        <p>Definí objetivos, limitaciones y disponibilidad de tus alumnos y dejá que la inteligencia artificial de GymFuze haga el resto. Los entrenadores mantienen el control, con sugerencias listas para ajustar y enviar en segundos.</p>
-        <ul>
-          <li>Generación automática de planes según nivel, equipamiento y frecuencia.</li>
-          <li>Recomendaciones de progresión basadas en datos de asistencia y esfuerzo.</li>
-          <li>Alertas cuando la IA detecta bajo compromiso o estancamiento.</li>
-          <li>Biblioteca centralizada para reutilizar rutinas entre equipos.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <h2>Cómo adoptan GymFuze los gimnasios exitosos</h2>
-        <div class="workflow">
-          <article class="workflow-step">
-            <h3>1. Diagnóstico express</h3>
-            <p>Analizamos tu operación actual y definimos objetivos junto a tu equipo en una sesión de 45 minutos.</p>
-          </article>
-          <article class="workflow-step">
-            <h3>2. Configuración guiada</h3>
-            <p>Importamos alumnos, planes y agendas. Capacitación práctica para dueños, administradores y entrenadores.</p>
-          </article>
-          <article class="workflow-step">
-            <h3>3. Lanzamiento con soporte</h3>
-            <p>Activamos las dos apps y acompañamos los primeros días para asegurar adopción total.</p>
-          </article>
-          <article class="workflow-step">
-            <h3>4. Crecimiento continuo</h3>
-            <p>Seguimiento mensual con nuevas métricas, campañas y rutinas inteligentes para retener y vender más.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <h2>Historias reales de crecimiento</h2>
-        <div class="testimonial-group">
-          <article class="testimonial">
-            <p>“Con GymFuze estandarizamos la experiencia en nuestras tres sedes. Los reportes diarios nos permiten tomar decisiones al instante.”</p>
-            <strong>Carolina Méndez</strong>
-            <span>Directora, UrbanPulse Gym</span>
-          </article>
-          <article class="testimonial">
-            <p>“La IA nos sugiere rutinas completas y después solo ajustamos detalles. Ahorro horas cada semana y mis alumnos lo notan.”</p>
-            <strong>Martín Reyes</strong>
-            <span>Coordinador de entrenadores</span>
-          </article>
-          <article class="testimonial">
-            <p>“Los cobros y recordatorios automáticos mejoraron la cobranza y liberaron tiempo administrativo. Ahora enfocamos recursos en crecer.”</p>
-            <strong>Julieta Pardo</strong>
-            <span>Dueña, Studio Move</span>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container pricing">
-        <h2>Planes flexibles con onboarding personalizado</h2>
-        <p>Probá GymFuze sin costo inicial. Escalá tu suscripción según la cantidad de alumnos activos y funcionalidades avanzadas que necesites.</p>
-        <ul>
-          <li>Prueba gratuita completa para evaluar con tu equipo.</li>
-          <li>Implementación guiada y migración de datos incluida.</li>
-          <li>Soporte prioritario por chat, mail y WhatsApp.</li>
-          <li>Actualizaciones automáticas con nuevas funciones de IA.</li>
-        </ul>
-        <div class="hero__actions" style="justify-content: center;">
-          <a class="btn btn-primary" href="https://linktr.ee/gymfuze" target="_blank" rel="noopener noreferrer">Reservar una demo</a>
-          <a class="btn btn-secondary" style="border-color: rgba(255,255,255,0.6);" href="https://linktr.ee/gymfuze" target="_blank" rel="noopener noreferrer">Descargar brochure</a>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container faq">
-        <h2>Preguntas frecuentes</h2>
-        <div class="faq-item">
-          <h3>¿Qué necesito para comenzar con GymFuze?</h3>
-          <p>Solo definimos la estructura de tus sedes, planes y entrenadores. Nuestro equipo te guía en la carga inicial y capacitación.</p>
-        </div>
-        <div class="faq-item">
-          <h3>¿Cómo funciona la generación de rutinas con IA?</h3>
-          <p>Ingresás objetivos, nivel, disponibilidad y equipamiento. La IA propone una rutina completa que podés ajustar antes de publicarla al alumno.</p>
-        </div>
-        <div class="faq-item">
-          <h3>¿Puedo integrar GymFuze con otros sistemas?</h3>
-          <p>Contamos con integraciones con pasarelas de pago, CRM y herramientas de marketing. También ofrecemos API para casos personalizados.</p>
-        </div>
-        <div class="faq-item">
-          <h3>¿La plataforma es segura?</h3>
-          <p>Implementamos cifrado, controles de acceso y copias de seguridad diarias para proteger los datos de tu negocio y tus alumnos.</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <section class="cta-final">
-    <div class="container">
-      <h2>¿Listo para transformar tu gimnasio con inteligencia artificial?</h2>
-      <p>Sumate a la comunidad de gimnasios y entrenadores que ya automatizan su operación con GymFuze. Nuestro equipo te acompaña en cada paso.</p>
-      <div class="cta-actions">
-        <a class="btn btn-primary" href="https://linktr.ee/gymfuze" target="_blank" rel="noopener noreferrer">Agendar llamada</a>
-        <a class="btn btn-secondary" href="https://linktr.ee/gymfuze" target="_blank" rel="noopener noreferrer">Iniciar prueba gratuita</a>
-      </div>
-      <footer>
-        © <span id="year"></span> GymFuze. Plataforma integral para gimnasios y entrenadores.
-      </footer>
     </div>
   </section>
 
+  <section class="problema">
+    <div class="container">
+      <h2 class="section-title fade-in">¿Cuántas veces te pasó?</h2>
+      <div class="pain-grid">
+        <div class="pain-card fade-in">
+          <div class="pain-icon">❌</div>
+          <p>Alumnos que te escriben "¿ya pagué?" a mitad de mes</p>
+        </div>
+        <div class="pain-card fade-in">
+          <div class="pain-icon">❌</div>
+          <p>Rutinas que vuelan por el grupo de WhatsApp y nadie encuentra</p>
+        </div>
+        <div class="pain-card fade-in">
+          <div class="pain-icon">❌</div>
+          <p>Cobros que se te pasan y después tenés que andar persiguiendo</p>
+        </div>
+      </div>
+      <div class="section-cta fade-in">
+        <a href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=a52abbab6bc14782a7280dfe6ca09800" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Terminá con el caos →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="solucion">
+    <div class="container">
+      <h2 class="section-title fade-in">Todo resuelto desde PC o celular</h2>
+      <p class="section-intro fade-in">Dos apps sincronizadas: una para que vos mandes, otra para que tus alumnos entrenen sin preguntar.</p>
+      <div class="dos-apps">
+        <div class="app-card fade-in">
+          <div class="icon">📱</div>
+          <strong>Tu panel de mando</strong>
+          <p>Alumnos, cobros, rutinas, reportes. Desde la PC o el celular.</p>
+        </div>
+        <div class="app-card fade-in">
+          <div class="icon">📱</div>
+          <strong>La app de tus alumnos</strong>
+          <p>Ven su rutina, saben si pagaron y siguen su progreso. Sin preguntarte cada 5 minutos.</p>
+        </div>
+      </div>
+      <div class="features-list">
+        <div class="feature-item fade-in">
+          <span class="check">✅</span>
+          <span>Gestión de alumnos y membresías</span>
+        </div>
+        <div class="feature-item fade-in">
+          <span class="check">✅</span>
+          <span>Cobros y recordatorios automáticos</span>
+        </div>
+        <div class="feature-item fade-in">
+          <span class="check">✅</span>
+          <span>Rutinas personalizadas con IA</span>
+        </div>
+        <div class="feature-item fade-in">
+          <span class="check">✅</span>
+          <span>Panel de reportes en tiempo real</span>
+        </div>
+        <div class="feature-item fade-in">
+          <span class="check">✅</span>
+          <span>Onboarding en menos de 72hs</span>
+        </div>
+      </div>
+      <div class="section-cta fade-in">
+        <a href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=a52abbab6bc14782a7280dfe6ca09800" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Quiero GymFuze →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="screenshots">
+    <div class="container">
+      <h2 class="section-title fade-in">Así se ve GymFuze</h2>
+      <div class="screenshots-grid">
+        <div class="screenshot-group admin fade-in">
+          <h3>Panel del gimnasio</h3>
+          <div class="screenshot-strip">
+            <figure class="screenshot-wrap" role="button" tabindex="0" data-fullscreen="assets/images/pantallas/gym/inicio.png">
+              <img src="assets/images/pantallas/gym/inicio.png" alt="Inicio del panel" />
+              <figcaption>Inicio</figcaption>
+            </figure>
+            <figure class="screenshot-wrap" role="button" tabindex="0" data-fullscreen="assets/images/pantallas/gym/alumnos.png">
+              <img src="assets/images/pantallas/gym/alumnos.png" alt="Gestión de alumnos" />
+              <figcaption>Alumnos</figcaption>
+            </figure>
+            <figure class="screenshot-wrap" role="button" tabindex="0" data-fullscreen="assets/images/pantallas/gym/rutinas.png">
+              <img src="assets/images/pantallas/gym/rutinas.png" alt="Rutinas" />
+              <figcaption>Rutinas</figcaption>
+            </figure>
+            <figure class="screenshot-wrap" role="button" tabindex="0" data-fullscreen="assets/images/pantallas/gym/pagos.png">
+              <img src="assets/images/pantallas/gym/pagos.png" alt="Pagos" />
+              <figcaption>Pagos</figcaption>
+            </figure>
+            <figure class="screenshot-wrap" role="button" tabindex="0" data-fullscreen="assets/images/pantallas/gym/membresias.png">
+              <img src="assets/images/pantallas/gym/membresias.png" alt="Membresías" />
+              <figcaption>Membresías</figcaption>
+            </figure>
+            <figure class="screenshot-wrap" role="button" tabindex="0" data-fullscreen="assets/images/pantallas/gym/turnos.png">
+              <img src="assets/images/pantallas/gym/turnos.png" alt="Turnos" />
+              <figcaption>Turnos</figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="screenshot-group usuario fade-in">
+          <h3>App para alumnos</h3>
+          <div class="screenshot-strip">
+            <figure class="screenshot-wrap" role="button" tabindex="0" data-fullscreen="assets/images/pantallas/usuario/inicio.png">
+              <img src="assets/images/pantallas/usuario/inicio.png" alt="Inicio app alumno" />
+              <figcaption>Inicio</figcaption>
+            </figure>
+            <figure class="screenshot-wrap" role="button" tabindex="0" data-fullscreen="assets/images/pantallas/usuario/rutinas.png">
+              <img src="assets/images/pantallas/usuario/rutinas.png" alt="Rutinas del alumno" />
+              <figcaption>Rutinas</figcaption>
+            </figure>
+            <figure class="screenshot-wrap" role="button" tabindex="0" data-fullscreen="assets/images/pantallas/usuario/rutina%20en%20curso.png">
+              <img src="assets/images/pantallas/usuario/rutina%20en%20curso.png" alt="Rutina en curso" />
+              <figcaption>Rutina en curso</figcaption>
+            </figure>
+            <figure class="screenshot-wrap" role="button" tabindex="0" data-fullscreen="assets/images/pantallas/usuario/estado%20de%20pago%20(membresia).png">
+              <img src="assets/images/pantallas/usuario/estado%20de%20pago%20(membresia).png" alt="Estado de pago" />
+              <figcaption>Estado de pago</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+      <div class="section-cta fade-in">
+        <a href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=a52abbab6bc14782a7280dfe6ca09800" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Probarlo ahora →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonios">
+    <div class="container">
+      <h2 class="section-title fade-in">Gimnasios que ya la usan</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial-card fade-in">
+          <p>"Con GymFuze estandarizamos la experiencia en nuestras tres sedes. Los reportes diarios nos permiten tomar decisiones al instante."</p>
+          <strong>Carolina Méndez</strong>
+          <span>UrbanPulse Gym</span>
+        </div>
+        <div class="testimonial-card fade-in">
+          <p>"La IA nos sugiere rutinas completas y después solo ajustamos detalles. Ahorro horas cada semana y mis alumnos lo notan."</p>
+          <strong>Martín Reyes</strong>
+          <span>Coordinador de entrenadores</span>
+        </div>
+        <div class="testimonial-card fade-in">
+          <p>"Los cobros y recordatorios automáticos mejoraron la cobranza y liberaron tiempo administrativo. Ahora enfocamos recursos en crecer."</p>
+          <strong>Julieta Pardo</strong>
+          <span>Studio Move</span>
+        </div>
+      </div>
+      <div class="metrics-bar fade-in">
+        <div class="metric">
+          <strong>+45%</strong>
+          <span>retención</span>
+        </div>
+        <div class="metric">
+          <strong>60%</strong>
+          <span>menos tareas admin</span>
+        </div>
+        <div class="metric">
+          <strong>+30%</strong>
+          <span>ventas</span>
+        </div>
+      </div>
+      <div class="section-cta fade-in">
+        <a href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=a52abbab6bc14782a7280dfe6ca09800" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Sumarme como ellos →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="planes">
+    <div class="container">
+      <h2 class="section-title fade-in">Sumate a GymFuze</h2>
+      <div class="planes-grid plan-single">
+        <div class="plan-card featured fade-in">
+          <h3 class="plan-name">GymFuze</h3>
+          <div class="plan-price">$15.000<span>/mes</span></div>
+          <ul class="plan-features">
+            <li>Gestión de alumnos y membresías</li>
+            <li>Cobros y recordatorios automáticos</li>
+            <li>Rutinas personalizadas con IA</li>
+            <li>Panel de reportes en tiempo real</li>
+            <li>App para vos + app para tus alumnos</li>
+            <li>Onboarding en menos de 72hs</li>
+          </ul>
+          <a href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=a52abbab6bc14782a7280dfe6ca09800" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Suscribirme ahora</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="container">
+      <h2 class="section-title fade-in">Preguntas frecuentes</h2>
+      <div class="faq-list">
+        <div class="faq-item fade-in">
+          <button class="faq-trigger" type="button">
+            ¿Cómo empiezo?
+            <span class="icon">▼</span>
+          </button>
+          <div class="faq-content">
+            <div class="faq-content-inner">
+              Creás tu cuenta, cargás tus alumnos y planes, y en menos de 72hs estás operando. Te guiamos paso a paso desde la app. Sin llamadas ni reuniones.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item fade-in">
+          <button class="faq-trigger" type="button">
+            ¿Cómo funciona la IA de rutinas?
+            <span class="icon">▼</span>
+          </button>
+          <div class="faq-content">
+            <div class="faq-content-inner">
+              Definís objetivos, nivel y equipamiento del alumno. La IA genera una rutina personalizada que podés ajustar antes de enviarla. Ahorra horas de planificación.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item fade-in">
+          <button class="faq-trigger" type="button">
+            ¿Puedo integrar medios de pago?
+            <span class="icon">▼</span>
+          </button>
+          <div class="faq-content">
+            <div class="faq-content-inner">
+              Sí. Integramos con Mercado Pago, tarjetas y transferencias. Los cobros y recordatorios se envían automáticamente según el plan de cada alumno.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item fade-in">
+          <button class="faq-trigger" type="button">
+            ¿Es segura mi información?
+            <span class="icon">▼</span>
+          </button>
+          <div class="faq-content">
+            <div class="faq-content-inner">
+              Totalmente. Usamos cifrado, copias de seguridad diarias y cumplimos con estándares de seguridad. Tus datos y los de tus alumnos están protegidos.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-final">
+    <div class="container">
+      <h2 class="fade-in">Dale a tu gimnasio el upgrade que necesita</h2>
+      <p class="fade-in">Menos caos, más resultados. Empezá hoy y en 72hs estás operando en piloto automático.</p>
+      <a href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=a52abbab6bc14782a7280dfe6ca09800" target="_blank" rel="noopener noreferrer" class="btn btn-primary fade-in">Suscribirme →</a>
+    </div>
+  </section>
+
+  <footer>
+    © <span id="year"></span> GymFuze. Plataforma SaaS para gimnasios y centros deportivos.
+  </footer>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-label="Imagen ampliada">
+    <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Cerrar">×</button>
+    <img src="" alt="" id="lightboxImg" />
+  </div>
+
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Scroll fade-in
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    fadeEls.forEach(el => observer.observe(el));
+
+    // Lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxClose = document.getElementById('lightboxClose');
+
+    document.querySelectorAll('.screenshot-wrap').forEach(wrap => {
+      wrap.addEventListener('click', () => {
+        const src = wrap.getAttribute('data-fullscreen');
+        const alt = wrap.querySelector('img').alt;
+        if (src) {
+          lightboxImg.src = src;
+          lightboxImg.alt = alt;
+          lightbox.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        }
+      });
+      wrap.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          wrap.click();
+        }
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    lightboxClose.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeLightbox();
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('active')) closeLightbox();
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-trigger').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const content = item.querySelector('.faq-content');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.faq-content').style.maxHeight = null;
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          content.style.maxHeight = content.scrollHeight + 'px';
+        }
+      });
+    });
   </script>
 </body>
 
